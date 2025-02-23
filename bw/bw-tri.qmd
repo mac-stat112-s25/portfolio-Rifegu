@@ -3,3 +3,87 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+# Load required library
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(readr)
+
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Generate sample data
+data <- data.frame(
+  X = rnorm(100, mean = 50, sd = 10),  # Independent variable 1
+  Y = rnorm(100, mean = 30, sd = 5),   # Independent variable 2
+  Z = sample(c("Group A", "Group B", "Group C"), 100, replace = TRUE)  # Categorical variable
+)
+
+# Create trivariate scatter plot
+ggplot(data, aes(x = X, y = Y, color = Z)) +
+  geom_point(size = 3, alpha = 0.7) +  # Data points with transparency
+  labs(
+    title = "Relationship Between X and Y Across Groups",
+    subtitle = "Analyzing variations based on categorical factor Z",
+    x = "X Variable (units)",  
+    y = "Y Variable (units)",  
+    color = "Group"  # Legend title
+  ) +
+  scale_color_manual(values = c("Group A" = "blue", "Group B" = "red", "Group C" = "green")) +  
+  theme_minimal() +  # Clean theme
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12, face = "italic"),
+    legend.position = "right"
+  ) +
+  geom_text(aes(label = ifelse(X > 65, "High Value", "")), hjust = -0.1, vjust = -0.5, size = 3) +  # Data annotation for emphasis
+  annotate("text", x = 30, y = 45, label = "Notable Cluster", color = "black", size = 4, fontface = "italic")  # General annotation
+
+```
+```{r}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(readr)
+
+# Load the dataset
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Data preparation
+elections <- elections %>%
+  mutate(pop_category = case_when(
+    total_votes_20 < 50000 ~ "Small County",
+    total_votes_20 >= 50000 & total_votes_20 < 200000 ~ "Medium County",
+    total_votes_20 >= 200000 ~ "Large County"
+  ))
+
+
+# Create trivariate scatter plot
+ggplot(elections, aes(x = dem_pct_20, y = repub_pct_20, color = pop_category)) +
+  geom_point(size = 3, alpha = 0.7) +  # Data points with transparency
+  labs(
+    title = "2020 U.S. Presidential Election Results by County",
+    subtitle = "Comparing Biden and Trump vote percentages across counties",
+    x = "Biden Vote Percentage",  
+    y = "Trump Vote Percentage",  
+    color = "County Size"  # Legend title
+  ) +
+  scale_color_manual(values = c("Small County" = "blue", "Medium County" = "purple", "Large County" = "red")) +  
+  theme_minimal() +  # Clean theme
+  theme(
+    plot.title = element_text(size = 14, face = "bold"),
+    plot.subtitle = element_text(size = 12, face = "italic"),
+    legend.position = "right"
+  ) +
+  geom_text(geom_text(aes(label = ifelse(total_votes_20 > 5e+05, "High Turnout", "")), 
+          hjust = -0.1, vjust = -0.5, size = 3)
+) +  # Data annotation for emphasis
+  annotate("text", x = 70, y = 30, label = "Competitive Counties", color = "black", size = 4, fontface = "italic")  # General annotation
+
+```
+ 
+ 
