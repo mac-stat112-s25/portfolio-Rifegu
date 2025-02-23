@@ -1,5 +1,50 @@
 ---
 title: "Bivariate Viz"
+author: Feride Karatas
 ---
 
-Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+this file to generate a professional looking **bivariate** visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+
+---
+title: "Bivariate Viz"
+number-sections: true
+execute: 
+  warning: false
+fig-height: 2.75
+fig-width: 4.25
+fig-env: 'figure'
+fig-pos: 'h'
+fig-align: center
+code-fold: false
+---
+
+# 
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(tidyverse)
+
+
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+
+head(elections)
+
+```
+
+```{r}
+
+ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16)) +
+  geom_point(color = "blue", alpha = 0.6) +  # Scatter plot points
+  geom_smooth(method = "lm", color = "red", se = TRUE) +  # Linear trendline with confidence interval
+  labs(
+    title = "Bivariate Graph ofrepub_pct_16 vs. repub_pct_20",
+    x = "repub_pct_16",
+    y = "repub_pct_20",
+    caption = "Elections"
+  ) +
+  theme_minimal() +
+  theme(text = element_text(size = 12))  # Improve readability
+
+```
