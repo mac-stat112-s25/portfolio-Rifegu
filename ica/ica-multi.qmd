@@ -1,6 +1,0 @@
----
-title: "Mulivariate Viz"
----
-
-Use this file for practice with the **mulivariate viz** in-class activity.  Refer to the class website for details.
-
