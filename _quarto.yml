@@ -30,13 +30,19 @@ book:
       - bw/bw-tri.qmd
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
+      - bw/bw-soloproject.qmd
+      
 
     - part: "In-class Activities"
       chapters: 
-      - ica/ica-uni.qmd
+      - ica/quarto-demo.qmd
+      - ica/ica-uni.qmd 
       - ica/ica-bi.qmd
       - ica/ica-multi.qmd
       - ica/ica-spatial.qmd
+      - ica/ica-wrangle.qmd
+      - ica/ica-str.qmd
+      - ica/ica-dataimp.qmd
 
 format:
   html:

@@ -1,0 +1,24 @@
+---
+title: "univar_viz"
+author: "Feride"
+editor: visual
+---
+
+# Import data
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
+View(hikes)
+
+ # COMMENT on the change in the code and the corresponding change in the plot
+ggplot(hikes, aes(x = time, y= elevation)) +
+  geom_point()+
+
+  
+
+
+  
+```

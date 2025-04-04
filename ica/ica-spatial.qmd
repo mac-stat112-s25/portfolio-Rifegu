@@ -3,3 +3,81 @@ title: "Spatial Viz"
 ---
 
 Use this file for practice with the **spatial viz** in-class activity.  Refer to the class website for details.
+
+
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(leaflet)
+library(gplots)
+
+fave_places <- read.csv("https://hash-mac.github.io/stat112site-s25/data/our_fave_places.csv")
+head(fave_places)
+```
+
+```{r}
+# Load the leaflet package
+library(leaflet)
+
+# Just a plotting frame
+leaflet(data = fave_places)
+
+# Now what do we have?
+leaflet(data = fave_places) |> 
+  addTiles()
+
+# Now what do we have?
+# longitude and latitude refer to the variables in our data
+leaflet(data = fave_places) |> 
+  addTiles() |> 
+  addMarkers(lng = ~longitude, lat = ~latitude)
+
+
+# Since we named them "longitude" and "latitude", the function
+# automatically recognizes these variables. No need to write them!
+leaflet(data = fave_places) |> 
+  addTiles() |> 
+  addMarkers()
+```
+```{r}
+# Load package needed to change color
+library(gplots)
+
+# We can add colored circles instead of markers at each location
+leaflet(data = fave_places) |> 
+  addTiles() |> 
+  addCircles(color = col2hex("red"))
+
+# We can change the background
+# Mark locations with yellow dots
+# And connect the dots, in their order in the dataset, with green lines
+# (These green lines don't mean anything here, but would if this were somebody's travel path!)
+leaflet(data = fave_places) |>
+  addProviderTiles("USGS") |>
+  addCircles(weight = 10, opacity = 1, color = col2hex("yellow")) |>
+  addPolylines(
+    lng = ~longitude,
+    lat = ~latitude,
+    color = col2hex("green"))
+```
+
+```{r}
+# Import starbucks location data
+starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+
+
+# Don't worry about the syntax
+starbucks_mn <- starbucks |>   
+  filter(Country == "US", State.Province == "MN")
+
+
+# Load the leaflet package
+library(leaflet)
+
+# Just a plotting frame
+leaflet(data = starbucks_mn) |> 
+  addTiles() |> 
+  addMarkers()
+```
+
