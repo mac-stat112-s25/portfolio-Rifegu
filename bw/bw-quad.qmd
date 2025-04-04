@@ -1,0 +1,7 @@
+---
+title: "Quadvariate Viz"
+---
+
+Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+
