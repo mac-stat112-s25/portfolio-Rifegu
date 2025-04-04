@@ -1,8 +1,0 @@
----
-title: "Exam 1"
-format: html
----
-
-```{r}
-```
-
