@@ -1,0 +1,89 @@
+---
+title: "Univariate Viz"
+author: Feride Karatas
+Date: Feb 22
+---
+
+Use this file to generate a professional looking **univariate** visualization.
+The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+
+
+# Import data
+hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
+```
+
+```{r}
+#| eval: true
+
+head(hikes)
+```
+
+```{r}
+#| eval: true
+
+head(hikes)
+```
+
+```{r}
+ggplot(hikes, aes(x = rating)) +
+ geom_bar()
+```
+
+```{r}
+ggplot(hikes, aes(x = rating)) +
+  geom_bar(fill= "steelblue", color= "green") +
+  labs(x = "Rating", y = "Number of hikes")+
+    theme_minimal()
+```
+
+## **Making a histogram for elevation and number of hikes:**
+
+```{r}
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white", fill = "blue") 
+```
+
+```{r}
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white") +
+  labs(x = "Elevation (feet)", y = "Number of hikes")
+```
+
+```{r}
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white", binwidth = 200) +
+  labs(x = "Elevation (feet)", y = "Number of hikes")
+```
+
+## **Making a density plot for elevation:**
+
+```{r}
+ggplot(hikes, aes(x = elevation)) +
+  geom_density(fill= "pink", alpha=0.5)+
+  labs(title = "Elevation Density Plot", subtitle = "Distribution of Hike Elevations")
+
+```
+
+```{r}
+#| eval: true
+
+ggplot(hikes, aes(x = elevation)) +
+ geom_density(color = "blue", fill = "orange")
+```
+
+![](images/Screenshot%202025-02-22%20at%205.09.03%20PM.png){width="532"}
+
+> ### Is the graph effective?
+>
+> All of the graphs (bar, histogram and density) are effective.
+> Each have different functions.
+> The bar chart shows how we can estimate on average how many hikes depending on the rating of the hike— easy, moderate, difficult.
+> We observe that when the rating is moderate there are more hikes.
+>
+> The histogram is effective in showing specifically on the elevations there are more hikes.
+> And the density plot shows the probability of hikes taken on specific elevation.
+> I believe density plot is much better- yet this depends on what we are researching.
