@@ -7,7 +7,7 @@ format: html
 
 ## Exploring Average Income Across the State of California
 
-### Information: 
+### Information:
 
 > The dataset contains data on test performance, school characteristics and student demographic backgrounds for school districts in California.
 >
@@ -87,7 +87,7 @@ ggplot(cal_boundries) +
 
 ```
 
-## Conclusion: 
+## Conclusion:
 
 > San Jose and San Francisco area has people with the highest average income.
 > This could be due to San Francisco and San Jose being very expensive and only people who earn a certain threshold of income can live in those regions.
