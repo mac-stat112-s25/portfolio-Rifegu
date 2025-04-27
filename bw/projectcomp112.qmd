@@ -1,0 +1,17 @@
+---
+title: "projectcomp112"
+format: html
+---
+
+```{r}
+library(tidyverse) 
+library(dplyr)
+
+
+
+diabetes<- read.csv("../data/diabetes.csv") 
+```
+```{r}
+head(diabetes)
+```
+

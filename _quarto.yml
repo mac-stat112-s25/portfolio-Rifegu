@@ -30,7 +30,7 @@ book:
       - bw/bw-tri.qmd
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
-      - bw/bw-soloproject.qmd
+      - bw/soloproject.qmd
       
 
     - part: "In-class Activities"
