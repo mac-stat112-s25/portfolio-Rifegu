@@ -2,6 +2,37 @@
 title: "Trivariate Viz"
 ---
 
-Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+Use this file to generate a professional looking **trivariate** visualization.
+The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+```
+
+```{r}
+
+# Code to create the scatter plot
+library(ggplot2)
+library(palmerpenguins)
+
+ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species, shape = sex)) +
+  geom_point() +
+  labs(
+    title = "Penguin Body Mass vs Bill Length by Species and Sex",
+    x = "Bill Length (mm)",
+    y = "Body Mass (g)"
+  ) +
+  theme_minimal()
 
 
+```
+
+> The scatter plot is effective in visualizing the relationship between penguin bill length and body mass, differentiated by species and sex.
+> The use of color (species) and shape (sex) helps separate the groups clearly without overwhelming the plot.
+>
+> We observe that Gentoo penguins tend to have longer bills and heavier body masses compared to Adelie and Chinstrap penguins.
+> Additionally, males (different shapes) generally have larger measurements compared to females within each species.
+>
+> This visualization is particularly effective for identifying group trends and overlaps between species and sexes at the same time.
+> If we were more interested in comparing only averages, a grouped boxplot would be more appropriate but for exploring individual variation and patterns, this scatter plot works better.
