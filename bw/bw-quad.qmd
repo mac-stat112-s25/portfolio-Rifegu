@@ -5,3 +5,40 @@ title: "Quadvariate Viz"
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
 
 
+```{r}
+# Load libraries
+library(tidyverse)
+library(palmerpenguins)
+
+# Drop NA rows for simplicity
+penguins_clean <- penguins %>%
+  drop_na(bill_length_mm, flipper_length_mm, species, body_mass_g, sex)
+
+# Create quadvariate scatter plot
+ggplot(penguins_clean, aes(
+  x = bill_length_mm,
+  y = flipper_length_mm,
+  color = species,
+  size = body_mass_g,
+  shape = sex
+)) +
+  geom_point(alpha = 0.7) +
+  scale_size(range = c(2, 8)) +
+  labs(
+    title = "Quadvariate Plot of Palmer Penguins",
+    subtitle = "Bill Length vs Flipper Length, Colored by Species, Sized by Body Mass, Shaped by Sex",
+    x = "Bill Length (mm)",
+    y = "Flipper Length (mm)",
+    color = "Species",
+    size = "Body Mass (g)",
+    shape = "Sex"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold"),
+    plot.subtitle = element_text(size = 14),
+    legend.position = "right"
+  )
+
+```
+
