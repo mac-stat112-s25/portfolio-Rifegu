@@ -1,5 +1,8 @@
 ---
 title: "Bivariate Viz"
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 Use this file for practice with the **bivariate viz** in-class activity.

@@ -32,7 +32,12 @@ book:
       - bw/bw-spatial.qmd
       - bw/soloproject.qmd
       
-
+    
+    - part: "Exams"
+      chapters:
+      - Exams/Exam1.qmd
+      
+      
     - part: "In-class Activities"
       chapters: 
       - ica/quarto-demo.qmd
