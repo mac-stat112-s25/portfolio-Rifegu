@@ -31,7 +31,7 @@ book:
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
       - bw/soloproject.qmd
-      - Exams/Exam1.qmd
+      
       
     
     - part: "Exams"
