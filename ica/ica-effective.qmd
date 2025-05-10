@@ -1,0 +1,43 @@
+---
+title: "ica-effective"
+format: html
+---
+
+```{r}
+library(tidyverse)
+
+weather <- read.csv("https://mac-stat.github.io/data/weather_3_locations.csv") |> mutate(date = as.Date(date))
+```
+
+```{r}
+ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + 
+  geom_point()
+```
+
+```{r}
+ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + 
+  geom_point() + 
+  labs(x = "A", y = "B", title = "C", color = "D")  
+```
+
+```{r}
+ggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + 
+  geom_point() + 
+  labs(
+    x = "9am Temperature (°C)", 
+    y = "3pm Temperature (°C)", 
+    title = "Morning vs Afternoon Temperatures by Location", 
+    color = "Location"
+  )
+
+```
+
+```{r}
+
+#| fig-cap: "Density plots of 3pm temperatures in 3 Australian locations."
+#| fig-alt: "Density plots showing the distribution of 3pm temperatures across three locations in Australia: Hobart, Uluru, and Wollongong. Uluru tends to have higher afternoon temperatures compared to the coastal cities. Data from mac-stat.github.io."
+ggplot(weather, aes(x = temp3pm, fill = location)) + 
+  geom_density(alpha = 0.5) + 
+  labs(x = "3pm temperature (Celsius)")  
+
+```

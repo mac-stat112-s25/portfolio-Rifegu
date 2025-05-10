@@ -1,0 +1,92 @@
+---
+title: "ica-joining"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+---
+title: "Joining"
+number-sections: true
+execute: 
+  warning: false
+fig-env: 'figure'
+fig-pos: 'h'
+fig-align: center
+code-fold: false
+---
+
+::: {.callout-caution title="Learning Goals"}
+Understand how to *join* different datasets: - mutating joins:
+`left_join()`, `inner_join()` and `full_join()` - filtering joins:
+`semi_join()`, `anti_join()`
+:::
+
+::: {.callout-note title="Additional Resources"}
+For more information about the topics covered in this chapter, refer to
+the resources below: - [Demonstration of joining data
+(YouTube)](https://www.youtube.com/watch?v=MJDHRtwZhoM&feature=youtu.be)
+by Lisa Lendway - [Joins](https://r4ds.hadley.nz/joins) by Wickham,
+Çetinkaya-Rundel, & Grolemund - [Data wrangling on multiple
+tables](https://mdsr-book.github.io/mdsr2e/ch-join.html) by Baumer,
+Kaplan, and Horton
+:::
+
+## Review
+
+**Where are we? Data preparation**
+
+![](https://mac-stat.github.io/images/112/legos.png)
+
+Thus far, we've learned how to: - `arrange()` data meaningfully -
+`filter()` rows and `select()` columns - `mutate()` new variables -
+`summarize()` variables (with and without `group_by()`) - Reshape data
+(`pivot_longer()`, `pivot_wider()`)
+
+------------------------------------------------------------------------
+
+## Motivation
+
+Real-world questions often require combining data from multiple sources,
+e.g.: - Predictors of album sales (combine Spotify + sales data) -
+Predictors of flight delays (combine flight + airline + airport data)
+
+------------------------------------------------------------------------
+
+## Mutating Joins: `left`, `inner`, `full`
+
+### Example 1 {.unnumbered}
+
+```{r}
+students_1 <- data.frame(
+  student = c("A", "B", "C"),
+  class = c("STAT 101", "GEOL 101", "ANTH 101")
+)
+enrollments_1 <- data.frame(
+  class = c("STAT 101", "ART 101", "GEOL 101"),
+  enrollment = c(18, 17, 24)
+)
+library(tidyverse)
+
+students_1 |> 
+  left_join(enrollments_1)
+
+enrollments_1 |> 
+  left_join(students_1)
+
+
+```
+
+```{r}
+students_1 |> 
+  inner_join(enrollments_1)
+students_1 |> 
+  full_join(enrollments_1)
+students_1 |> 
+  anti_join(enrollments_1)
+students_1 |> 
+  semi_join(enrollments_1)
+
+```
+

@@ -4,7 +4,7 @@ project:
 
 book:
   title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
+  author: "Feride Karatas"
   date: today
   reader-mode: true
   page-navigation: true
@@ -31,11 +31,15 @@ book:
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
       - bw/soloproject.qmd
+      - Exams/Exam1.qmd
       
     
     - part: "Exams"
       chapters:
       - Exams/Exam1.qmd
+      - Exams/summary1.qmd
+      - Exams/Exam2.qmd
+  
       
       
     - part: "In-class Activities"
@@ -48,6 +52,11 @@ book:
       - ica/ica-wrangle.qmd
       - ica/ica-str.qmd
       - ica/ica-dataimp.qmd
+      - ica/ica-effective.qmd
+      - ica/ica-dates.qmd
+      - ica/ica-reshaping.qmd
+      - ica/ica-joining.qmd
+      - ica/ica-factors.qmd
 
 format:
   html:

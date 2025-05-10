@@ -1,0 +1,106 @@
+---
+title: "ica-factors"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+---
+title: "Factors"
+number-sections: true
+execute: 
+  warning: false
+fig-env: 'figure'
+fig-pos: 'h'
+fig-align: center
+code-fold: false
+---
+
+::: {.callout-caution title="Learning Goals"}
+-   Understand the difference between `character` and `factor`
+    variables.
+-   Be able to convert a `character` variable to a `factor`.
+-   Develop comfort manipulating the order and values of a factor.
+:::
+
+::: {.callout-note title="Additional Resources"}
+-   [forcats cheat sheet
+    (pdf)](https://github.com/rstudio/cheatsheets/raw/main/factors.pdf)
+-   [Factors (r4ds)](https://r4ds.hadley.nz/factors)
+:::
+
+# Review
+
+![](https://mac-stat.github.io/images/112/legos.png)
+
+We've learned: - Wrangling: `arrange()`, `filter()`, `select()`,
+`mutate()`, `summarize()` - Reshaping: `pivot_longer()`,
+`pivot_wider()` - Joining datasets: `join()`
+
+# Factors
+
+We'll focus on: - **Working with character variables** (detect/replace
+patterns) - **Converting characters to factors** (today)
+
+------------------------------------------------------------------------
+
+## Example 1: Default Order
+
+```{r}
+library(tidyverse)
+
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv") |> select(state_abbr, historical, county_name, total_votes_20, repub_pct_20, dem_pct_20) |> mutate(dem_support_20 = case_when( (repub_pct_20 - dem_pct_20 >= 5) ~ "low", (repub_pct_20 - dem_pct_20 <= -5) ~ "high", .default = "medium" ))
+
+
+
+head(elections)
+
+
+
+ggplot(elections, aes(x = dem_support_20)) + geom_bar()
+```
+
+```{r}
+elections <- elections |> 
+  mutate(dem_support_20 = fct_relevel(dem_support_20, c("low", "medium", "high")))
+
+str(elections)
+
+ggplot(elections, aes(x = dem_support_20)) + 
+  geom_bar()
+
+```
+
+```{r}
+elections <- elections |> 
+  mutate(results_20 = fct_recode(dem_support_20, 
+                                 "strong republican" = "low",
+                                 "close race" = "medium",
+                                 "strong democrat" = "high"))
+
+elections |> 
+  count(results_20)
+
+```
+
+```{r}
+library(ggridges)
+
+elections |> 
+  ggplot(aes(x = repub_pct_20, y = state_abbr, fill = historical)) +
+    geom_density_ridges() +
+    scale_fill_manual(values = c("blue", "purple", "red"))
+
+```
+
+```{r}
+elections |> 
+  mutate(state_abbr = fct_reorder(state_abbr, repub_pct_20, .fun = "median", .desc = TRUE)) |> 
+  ggplot(aes(x = repub_pct_20, y = state_abbr, fill = historical)) +
+    geom_density_ridges() +
+    scale_fill_manual(values = c("blue", "purple", "red"))
+
+
+```
+

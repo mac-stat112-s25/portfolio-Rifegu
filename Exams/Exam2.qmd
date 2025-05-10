@@ -1,0 +1,127 @@
+---
+title: "Exam2"
+format: html
+---
+
+```{r}
+
+# Load libraries
+library(tidytuesdayR)
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# Load TidyTuesday data
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+
+# Inspect data
+str(fc)
+head(fc, 22)
+tail(fc, 22)
+nrow(fc)
+ncol(fc)
+class(fc)
+
+# Inspect and clean variables
+fc %>% distinct(food_category)
+fc %>% count(food_category)
+
+# Fix food_category names
+fcc <- fc %>%
+  mutate(food_category = case_when(
+    food_category == "Lamb & Goat" ~ "Lamb",
+    food_category == "Milk - inc. cheese" ~ "Dairy",
+    food_category == "Wheat and Wheat Products" ~ "Wheat",
+    food_category == "Nuts inc. Peanut Butter" ~ "Nuts",
+    TRUE ~ food_category
+  ))
+
+# Confirm cleaning
+fcc %>% distinct(food_category)
+
+# Most consuming countries
+top_countries <- fcc %>%
+  group_by(country) %>%
+  summarize(total_consumption = sum(consumption, na.rm = TRUE)) %>%
+  arrange(desc(total_consumption)) %>%
+  slice(1:5)
+
+print(top_countries)
+
+# Simple bar plot
+#| fig-height: 8
+#| fig-width: 12
+ggplot(fcc, aes(x = food_category, y = consumption)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Food Consumption per Food Category",
+    x = "Food Category",
+    y = "Consumption (kg/person/year)"
+  )
+
+# Choropleth map (Attempt 1)
+ne_countries <- ne_countries(returnclass = "sf")
+
+world_data1 <- ne_countries %>%
+  select(name, geometry) %>%
+  left_join(fcc %>% select(country, food_category, consumption), by = c("name" = "country")) 
+
+ggplot(world_data1) +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~ food_category) +
+  theme(legend.position = "bottom")
+
+# Choropleth map (Attempt 2 - fixing names)
+world_data2 <- ne_countries %>%
+  select(name, geometry) %>%
+  mutate(name = ifelse(name == "United States of America", "USA", name),
+         name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name),
+         name = ifelse(name == "Czechia", "Czech Republic", name),
+         name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) %>%
+  left_join(fcc %>% select(country, food_category, consumption), by = c("name" = "country"))
+
+ggplot(world_data2) +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~ food_category) +
+  theme(legend.position = "bottom")
+
+# Choropleth map (Attempt 3 - standardized consumption)
+world_data3 <- ne_countries %>%
+  select(name, geometry) %>%
+  mutate(name = ifelse(name == "United States of America", "USA", name),
+         name = ifelse(name == "Bosnia and Herz.", "Bosnia and Herzegovina", name),
+         name = ifelse(name == "Czechia", "Czech Republic", name),
+         name = ifelse(name == "Taiwan", "Taiwan. ROC", name)) %>%
+  left_join(
+    fcc %>%
+      group_by(food_category) %>%
+      mutate(consumption = (consumption - mean(consumption, na.rm = TRUE)) / sd(consumption, na.rm = TRUE)),
+    by = c("name" = "country")
+  )
+
+ggplot(world_data3) +
+  geom_sf(aes(fill = consumption)) +
+  facet_wrap(~ food_category) +
+  theme(legend.position = "bottom")
+
+```
+```{r}
+#| fig-height: 10
+#| fig-width: 30
+
+
+ggplot(fc, aes(x = food_category, y = consumption, fill = country)) +
+  geom_point(position = position_jitter(width = 0.2, height = 0)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Food Consumption per Category by Country",
+    x = "Food Category",
+    y = "Consumption (kg/person/year)"
+  )
+
+
+```
+

@@ -1,6 +1,9 @@
 ---
 title: "ica-dates"
 format: html
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 ---
@@ -87,27 +90,29 @@ Most of these require just 1 verb.
 penguins|> 
   filter(species=="Adelie", body_mass_g> 4700)
 
-# Get data on penguin body mass only
-# Show just the first 6 rows
+
+penguins |> 
+  select(body_mass_g) |> 
+  head()
 
 
-# Sort the penguins from smallest to largest body mass
-# Show just the first 6 rows
+penguins |> 
+  arrange(body_mass_g) |> 
+  head()
+
+penguins |> 
+  summarize(mean = mean(body_mass_g, na.rm = TRUE))
 
 
+penguins |> 
+  group_by(species) |> 
+  summarize(mean = mean(body_mass_g, na.rm = TRUE))
 
-# Calculate the average body mass across all penguins
-# Note: na.rm = TRUE removes the NAs from the calculation
+penguins |> 
+  mutate(body_mass_kg = body_mass_g/1000) |> 
+  head()
 
 
-
-# Calculate the average body mass by species
-
-
-
-# Create a new column that records body mass in kilograms, not grams
-# NOTE: there are 1000 g in 1 kg
-# Show just the first 6 rows
 
 
 ```
@@ -163,13 +168,6 @@ penguins |>
   filter(species == "Gentoo") |> 
   mutate(bill_length_cm = bill_length_mm / 10) |> 
   arrange(desc(bill_length_cm))
-
-```
-
-```{r}
-# Sort the species from smallest to biggest with respect to their 
-# average bill length in cm
-
 ```
 
 ### Example 3: Interpret Code {.unnumbered}
@@ -186,13 +184,8 @@ Once you've thought about it, put the code inside a chunk and run it!
 penguins \|\> filter(species == "Chinstrap") \|\> group_by(sex) \|\> summarize(min = min(body_mass_g), max = max(body_mass_g)) \|\> mutate(range = max - min)
 
 \
-\
-\
-\
 
 ## Exercises Part 1: Same Verbs, New Tricks
-
-{{< include activity-instructions.qmd >}}
 
 ### Exercise 1: More Filtering {.unnumbered}
 
@@ -213,24 +206,6 @@ Recall the "logical comparison operators" we can use to `filter()` our data:
 ::: {.callout-tip title="Commenting/Uncommenting Code"}
 To comment/uncomment several lines of code at once, highlight them then click <kbd>ctrl/cmd</kbd>+<kbd>shift</kbd>+<kbd>c</kbd>.
 :::
-
-```{r}
-# Create a dataset with just Adelie and Chinstrap using %in%
-# Pipe this into `count(species)` to confirm that you only have these 2 species
-# ___ |> 
-#   filter(___) |> 
-#   count(species)
-```
-
-```{r}
-# Create a dataset with just Adelie and Chinstrap using !=
-# Pipe this into `count(species)` to confirm that you only have these 2 species
-# ___ |> 
-#   filter(___) |> 
-#   count(species)
-```
-
-#### Part b {.unnumbered}
 
 Notice that some of our penguins have missing (`NA`) data on some values:
 
@@ -316,33 +291,6 @@ Use these *shortcuts* to create the following datasets.
 names(penguins)
 ```
 
-```{r}
-# Use a shortcut to keep everything but the year and island variables
-
-
-```
-
-```{r}
-# Use a shortcut to keep only species and the penguin characteristics measured in mm
-
-
-```
-
-```{r}
-# Use a shortcut to keep only species and bill-related measurements
-
-
-```
-
-```{r}
-# Use a shortcut to keep only species and the length-related characteristics
-
-
-```
-
-\
-\
-\
 \
 
 ### Exercise 3: Arranging, Counting, & Grouping by Multiple Variables {.unnumbered}
@@ -370,11 +318,6 @@ penguins |>
   summarize(mean = mean(body_mass_g, na.rm = TRUE))
 
 ```
-
-\
-\
-\
-\
 
 ### Exercise 4: Dates {.unnumbered}
 
@@ -429,11 +372,6 @@ today >= ymd("2024-02-14")
 today < ymd("2024-02-14")
 ```
 
-\
-\
-\
-\
-
 ## Exercises Part 2: Application
 
 The remaining exercises are *similar* to some of those on the homework.
@@ -456,33 +394,6 @@ Remember the following ways to make tasks more manageable:
 -   Translate the prompt into our 6 verbs (and `count()`). That is, think before you type.
 -   Build your code line by line. It's important to understand what's being piped into each function!
 
-### Exercise 5: Warming up {.unnumbered}
-
-```{r}
-# How many days of data do we have for each state?
-
-
-# How many total births were there in this time period?
-
-
-# How many total births were there per state in this time period, sorted from low to high?
-
-
-```
-
-### Exercise 6: Homework Reprise {.unnumbered}
-
-Create a new dataset named `daily_births` that includes the total number of births per day (across all states) and the corresponding day of the week, eg, Mon.
-NOTE: Name the column with total births so that it's easier to wrangle and plot.
-
-```{r}
-```
-
-Using this data, construct a plot of `births` over time, indicating the day of week.
-
-```{r}
-```
-
 ### Exercise 7: Wrangle & Plot {.unnumbered}
 
 For each prompt below, you can decide whether you want to: (1) wrangle and store data, then plot; or (2) wrangle data and pipe directly into ggplot.
@@ -494,58 +405,6 @@ penguins |>
   ggplot(aes(y = bill_length_mm, x = bill_depth_mm, color = species)) + 
     geom_point()
 ```
-
-#### Part a {.unnumbered}
-
-Calculate the total number of births in each month and year, eg, Jan 1969, Feb 1969, ....
-Label month by names not numbers, eg, Jan not 1.
-Then, plot the births by month and comment on what you learn.
-
-```{r}
-```
-
-#### Part b {.unnumbered}
-
-In 1988, calculate the total number of births per week in each state.
-Get rid of week "53", which isn't a complete week!
-Then, make a line plot of births by week for each state and comment on what you learn.
-For example, do you notice any seasonal trends?
-Are these the same in every state?
-Any outliers?
-
-```{r}
-```
-
-#### Part c {.unnumbered}
-
-Repeat the above for just Minnesota (MN) and Louisiana (LA).
-MN has one of the coldest climates and LA has one of the warmest.
-How do their seasonal trends compare?
-Do you think these trends are similar in other colder and warmer states?
-Try it!
-
-```{r}
-```
-
-### Exercise 8: More Practice {.unnumbered}
-
-#### Part a {.unnumbered}
-
-Create a dataset with only births in Massachusetts (MA) in 1979 and sort the days from those with the most births to those with the fewest.
-
-```{r}
-```
-
-#### Part b {.unnumbered}
-
-Make a table showing the five states with the most births between September 9, 1979 and September 12, 1979, including the 9th and 12th.
-Arrange the table in descending order of births.
-
-## Solutions
-
-<details>
-
-<summary>Click for Solutions</summary>
 
 ### Example 1: Single Verb {.unnumbered}
 
@@ -763,5 +622,3 @@ today >= ymd("2024-02-14")
 # today is not before Feb 14, 2024
 today < ymd("2024-02-14")
 ```
-
-</details>

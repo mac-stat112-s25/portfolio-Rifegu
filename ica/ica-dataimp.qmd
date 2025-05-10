@@ -1,16 +1,96 @@
 ---
 title: "ica-dataimp"
 format: html
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
+---
+title: "Data Import"
+number-sections: true
+execute: 
+  warning: false
+fig-env: 'figure'
+fig-pos: 'h'
+fig-align: center
+code-fold: false
+---
+
+::: {.callout-caution title="Learning Goals"}
+Get a glimpse into how to... - find existing data sets - save data sets
+locally - load data into RStudio - do preliminary data checking and
+cleaning: - format variables properly - deal with missing values NOTE:
+Best learned through practice.
+:::
+
+::: {.callout-note title="Additional Resources"}
+-   [Import wizard demo
+    (YouTube)](https://www.youtube.com/watch?v=GtCsjtZBNp4)
+-   [Data Import Cheat Sheet
+    (pdf)](https://github.com/rstudio/cheatsheets/raw/main/data-import.pdf)
+-   [`readr` documentation](https://readr.tidyverse.org/)
+-   [Data Import (r4ds)](https://r4ds.hadley.nz/data-import.html)
+-   [Missing data (r4ds)](https://r4ds.hadley.nz/missing-values.html)
+-   [Data intake
+    (MDSR)](https://mdsr-book.github.io/mdsr2e/ch-dataII.html#data-intake)
+:::
+
 ```{r}
 
-exped_tidy <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/exped_tidy.csv')
-peaks_tidy <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/peaks_tidy.csv')
+
+library(tidyverse)
+
+# Import the messy IMDB dataset from Downloads
+imdb_messy <- read_csv("~/Desktop/imdb_5000_messy.csv")
+
+
+str(imdb_messy)
+
+head(imdb_messy)
+
+# Summarize data
+imdb_messy |>
+  mutate(across(where(is.character), as.factor)) |>
+  summary()
 
 ```
+
 ```{r}
-str(exped_tidy)
+# See how color variable looks
+imdb_messy |> count(color)
+
+# Clean it using fct_recode()
+imdb_clean <- imdb_messy |> 
+  mutate(color = fct_recode(color,
+                            "Color" = "COLOR",
+                            "Color" = "color",
+                            "Black_White" = "B&W",
+                            "Black_White" = "Black and White"))
+
+# Double-check cleaned values
+imdb_clean |> count(color)
+
+```
+
+```{r}
+# How many missing values per column?
+colSums(is.na(imdb_messy))
+
+# Look at movies missing actor 1 facebook likes
+imdb_messy |> 
+  filter(is.na(actor_1_facebook_likes))
+
+```
+
+```{r}
+# Drop movies missing duration or color
+imdb_no_missing <- imdb_messy |> 
+  filter(!is.na(duration), !is.na(color))
+
+# Plot to check
+ggplot(imdb_no_missing, aes(x = duration, fill = color)) +
+  geom_density()
 
 ```
 
