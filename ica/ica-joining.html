@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>8&nbsp; My first Quarto document – COMP/STAT112 Notebook</title>
+<title>Joining – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ica/ica-uni.html" rel="next">
-<link href="../Exams/Exam1.html" rel="prev">
+<link href="../ica/ica-reshaping.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/quarto-demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">My first Quarto document</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-joining.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -216,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/quarto-demo.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ica/quarto-demo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">My first Quarto document</span></span></a>
   </div>
 </li>
@@ -282,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-joining.html" class="sidebar-item-text sidebar-link">
+  <a href="../ica/ica-joining.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></span></a>
   </div>
 </li>
@@ -296,20 +295,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">8.1</span> Intro</a></li>
-  <li><a href="#exercise-1-deduce-quarto-features" id="toc-exercise-1-deduce-quarto-features" class="nav-link" data-scroll-target="#exercise-1-deduce-quarto-features"><span class="header-section-number">8.2</span> Exercise 1: Deduce Quarto features</a></li>
-  <li><a href="#exercise-2-code" id="toc-exercise-2-code" class="nav-link" data-scroll-target="#exercise-2-code"><span class="header-section-number">8.3</span> Exercise 2: Code</a></li>
-  <li><a href="#exercise-3-chunks" id="toc-exercise-3-chunks" class="nav-link" data-scroll-target="#exercise-3-chunks"><span class="header-section-number">8.4</span> Exercise 3: Chunks</a></li>
-  <li><a href="#exercise-4-practice" id="toc-exercise-4-practice" class="nav-link" data-scroll-target="#exercise-4-practice"><span class="header-section-number">8.5</span> Exercise 4: Practice</a></li>
-  <li><a href="#exercise-5-fix-this-code" id="toc-exercise-5-fix-this-code" class="nav-link" data-scroll-target="#exercise-5-fix-this-code"><span class="header-section-number">8.6</span> Exercise 5: Fix this code</a></li>
-  <li><a href="#exercise-6-comments" id="toc-exercise-6-comments" class="nav-link" data-scroll-target="#exercise-6-comments"><span class="header-section-number">8.7</span> Exercise 6: Comments</a></li>
+<li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review"><span class="header-section-number">19.1</span> Review</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation"><span class="header-section-number">19.2</span> Motivation</a></li>
+  <li>
+<a href="#mutating-joins-left-inner-full" id="toc-mutating-joins-left-inner-full" class="nav-link" data-scroll-target="#mutating-joins-left-inner-full"><span class="header-section-number">19.3</span> Mutating Joins: <code>left</code>, <code>inner</code>, <code>full</code></a>
+  <ul class="collapse">
+<li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  </ul>
+</li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/quarto-demo.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">My first Quarto document</span></a></li></ol></nav><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">8</span>&nbsp; <span class="chapter-title">My first Quarto document</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-joining.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Joining</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -323,74 +321,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><section id="intro" class="level2" data-number="8.1"><h2 data-number="8.1" class="anchored" data-anchor-id="intro">
-<span class="header-section-number">8.1</span> Intro</h2>
-<p><strong>Macalester College</strong> is in the <em>Twin Cities</em>. It has:</p>
-<ul>
-<li>four seasons</li>
-<li>bagpipes</li>
-<li>delightful students</li>
-</ul>
-<p>Check it out for yourself:</p>
-<p><img src="https://www.macalester.edu/about/wp-content/uploads/sites/191/2019/12/campusmap336.png" class="img-fluid"></p>
-</section><section id="exercise-1-deduce-quarto-features" class="level2" data-number="8.2"><h2 data-number="8.2" class="anchored" data-anchor-id="exercise-1-deduce-quarto-features">
-<span class="header-section-number">8.2</span> Exercise 1: Deduce Quarto features</h2>
-<p>Check out the appearance and contents of this document. Thoughts?</p>
-<p>In the toolbar at the top of this document, <strong>Render</strong> the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?</p>
-<p>Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:</p>
-<p><code>*</code></p>
-<p><code>**</code></p>
-<p><code>#</code></p>
-<p><code>-</code></p>
-<p><code>\</code></p>
-<p><code>![](url)</code></p>
-</section><section id="exercise-2-code" class="level2" data-number="8.3"><h2 data-number="8.3" class="anchored" data-anchor-id="exercise-2-code">
-<span class="header-section-number">8.3</span> Exercise 2: Code</h2>
-<p>How does this appear in the .qmd? The .html? So…?!</p>
-<p>seq(from = 100, to = 1000, by = 50)</p>
-</section><section id="exercise-3-chunks" class="level2" data-number="8.4"><h2 data-number="8.4" class="anchored" data-anchor-id="exercise-3-chunks">
-<span class="header-section-number">8.4</span> Exercise 3: Chunks</h2>
-<p>Quarto isn’t a mind reader – we must distinguish R code from text. We do so by putting code inside an <strong>R chunk</strong>:</p>
-<ul>
-<li>Put the <code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> code in the chunk.</li>
-<li>Press the green arrow in the top right of the chunk. What happens in the qmd?</li>
-<li>Render. What appears in the html: R code, output, or both?</li>
-</ul></section><section id="exercise-4-practice" class="level2" data-number="8.5"><h2 data-number="8.5" class="anchored" data-anchor-id="exercise-4-practice">
-<span class="header-section-number">8.5</span> Exercise 4: Practice</h2>
-<ul>
-<li>Use R code to create the following sequence: 10 10 10 10</li>
-<li>Store the sequence as <code>four_tens</code>.</li>
-<li>Use an R function (which we haven’t learned!) to add up the numbers in <code>four_tens</code>.</li>
-</ul></section><section id="exercise-5-fix-this-code" class="level2" data-number="8.6"><h2 data-number="8.6" class="anchored" data-anchor-id="exercise-5-fix-this-code">
-<span class="header-section-number">8.6</span> Exercise 5: Fix this code</h2>
-<p>Code is a form of communication, and the code below doesn’t cut it.</p>
-<p>Put the code in a chunk and fix it.</p>
-<p>Rep(x = 1, times = 10) seq(from=100,to=1000,length=20) theNumberofStudentsinthisclass&lt;-27</p>
-</section><section id="exercise-6-comments" class="level2" data-number="8.7"><h2 data-number="8.7" class="anchored" data-anchor-id="exercise-6-comments">
-<span class="header-section-number">8.7</span> Exercise 6: Comments</h2>
-<p>Run the chunk below. Notice that R ignores anything in a line starting with a pound sign (<code>#</code>). If we took the <code>#</code> away we’d get an error!</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># This is a comment</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
+</header><div class="callout callout-style-default callout-caution callout-titled" title="Learning Goals">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning Goals
 </div>
 </div>
-<p>We’ll utilize this feature to <strong>comment our code</strong>, i.e.&nbsp;leave short notes about what our code is doing. Below, replace the <code>???</code> with an appropriate comment.</p>
+<div class="callout-body-container callout-body">
+<p>Understand how to <em>join</em> different datasets: - mutating joins: <code>left_join()</code>, <code>inner_join()</code> and <code>full_join()</code> - filtering joins: <code>semi_join()</code>, <code>anti_join()</code></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Additional Resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Additional Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information about the topics covered in this chapter, refer to the resources below: - <a href="https://www.youtube.com/watch?v=MJDHRtwZhoM&amp;feature=youtu.be">Demonstration of joining data (YouTube)</a> by Lisa Lendway - <a href="https://r4ds.hadley.nz/joins">Joins</a> by Wickham, Çetinkaya-Rundel, &amp; Grolemund - <a href="https://mdsr-book.github.io/mdsr2e/ch-join.html">Data wrangling on multiple tables</a> by Baumer, Kaplan, and Horton</p>
+</div>
+</div>
+<section id="review" class="level2" data-number="19.1"><h2 data-number="19.1" class="anchored" data-anchor-id="review">
+<span class="header-section-number">19.1</span> Review</h2>
+<p><strong>Where are we? Data preparation</strong></p>
+<p><img src="https://mac-stat.github.io/images/112/legos.png" class="img-fluid"></p>
+<p>Thus far, we’ve learned how to: - <code>arrange()</code> data meaningfully - <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code> rows and <code>select()</code> columns - <code>mutate()</code> new variables - <code>summarize()</code> variables (with and without <code>group_by()</code>) - Reshape data (<code>pivot_longer()</code>, <code>pivot_wider()</code>)</p>
+<hr></section><section id="motivation" class="level2" data-number="19.2"><h2 data-number="19.2" class="anchored" data-anchor-id="motivation">
+<span class="header-section-number">19.2</span> Motivation</h2>
+<p>Real-world questions often require combining data from multiple sources, e.g.: - Predictors of album sales (combine Spotify + sales data) - Predictors of flight delays (combine flight + airline + airport data)</p>
+<hr></section><section id="mutating-joins-left-inner-full" class="level2" data-number="19.3"><h2 data-number="19.3" class="anchored" data-anchor-id="mutating-joins-left-inner-full">
+<span class="header-section-number">19.3</span> Mutating Joins: <code>left</code>, <code>inner</code>, <code>full</code>
+</h2>
+<section id="example-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="example-1">Example 1</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># ???</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>temperature_f</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>students_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="at">student =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"STAT 101"</span>, <span class="st">"GEOL 101"</span>, <span class="st">"ANTH 101"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>enrollments_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"STAT 101"</span>, <span class="st">"ART 101"</span>, <span class="st">"GEOL 101"</span>),</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="at">enrollment =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">24</span>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-10"><a href="#cb1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="fu">left_join</span>(enrollments_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 50</code></pre>
+<pre><code>  student    class enrollment
+1       A STAT 101         18
+2       B GEOL 101         24
+3       C ANTH 101         NA</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>enrollments_1 <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">left_join</span>(students_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     class enrollment student
+1 STAT 101         18       A
+2  ART 101         17    &lt;NA&gt;
+3 GEOL 101         24       B</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="fu">inner_join</span>(enrollments_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student    class enrollment
+1       A STAT 101         18
+2       B GEOL 101         24</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">full_join</span>(enrollments_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student    class enrollment
+1       A STAT 101         18
+2       B GEOL 101         24
+3       C ANTH 101         NA
+4    &lt;NA&gt;  ART 101         17</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">anti_join</span>(enrollments_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student    class
+1       C ANTH 101</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">semi_join</span>(enrollments_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  student    class
+1       A STAT 101
+2       B GEOL 101</code></pre>
 </div>
 </div>
 
 
 <!-- -->
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1010,122 +1042,104 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../Exams/Exam1.html" class="pagination-link" aria-label="Exam1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam1</span></span>
+      <a href="../ica/ica-reshaping.html" class="pagination-link" aria-label="Reshaping">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ica/ica-uni.html" class="pagination-link" aria-label="Univariate Viz">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "My first Quarto document"</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="co">---</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">## Intro</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>**Macalester College** is in the *Twin Cities*.</span>
-<span id="cb5-9"><a href="#cb5-9"></a>It has:</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="ss">- </span>four seasons</span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="ss">- </span>bagpipes</span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="ss">- </span>delightful students</span>
-<span id="cb5-14"><a href="#cb5-14"></a></span>
-<span id="cb5-15"><a href="#cb5-15"></a>Check it out for yourself:</span>
-<span id="cb5-16"><a href="#cb5-16"></a></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="al">![](https://www.macalester.edu/about/wp-content/uploads/sites/191/2019/12/campusmap336.png)</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a></span>
-<span id="cb5-19"><a href="#cb5-19"></a></span>
-<span id="cb5-20"><a href="#cb5-20"></a></span>
-<span id="cb5-21"><a href="#cb5-21"></a></span>
-<span id="cb5-22"><a href="#cb5-22"></a></span>
-<span id="cb5-23"><a href="#cb5-23"></a><span class="fu">## Exercise 1: Deduce Quarto features</span></span>
-<span id="cb5-24"><a href="#cb5-24"></a></span>
-<span id="cb5-25"><a href="#cb5-25"></a>Check out the appearance and contents of this document. Thoughts?</span>
-<span id="cb5-26"><a href="#cb5-26"></a></span>
-<span id="cb5-27"><a href="#cb5-27"></a>In the toolbar at the top of this document, **Render** the .qmd file into a .html file. Where is this file stored? Thoughts about its appearance / contents? Can you edit it?</span>
-<span id="cb5-28"><a href="#cb5-28"></a></span>
-<span id="cb5-29"><a href="#cb5-29"></a>Toggling between the .qmd and .html files, explain the purpose of the following features in the .qmd file:        </span>
-<span id="cb5-30"><a href="#cb5-30"></a></span>
-<span id="cb5-31"><a href="#cb5-31"></a><span class="in">`*`</span></span>
-<span id="cb5-32"><a href="#cb5-32"></a></span>
-<span id="cb5-33"><a href="#cb5-33"></a><span class="in">`**`</span></span>
-<span id="cb5-34"><a href="#cb5-34"></a></span>
-<span id="cb5-35"><a href="#cb5-35"></a><span class="in">`#`</span></span>
-<span id="cb5-36"><a href="#cb5-36"></a></span>
-<span id="cb5-37"><a href="#cb5-37"></a><span class="in">`-`</span></span>
-<span id="cb5-38"><a href="#cb5-38"></a></span>
-<span id="cb5-39"><a href="#cb5-39"></a><span class="in">`\`</span></span>
-<span id="cb5-40"><a href="#cb5-40"></a></span>
-<span id="cb5-41"><a href="#cb5-41"></a><span class="in">`![](url)`</span></span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a></span>
-<span id="cb5-44"><a href="#cb5-44"></a></span>
-<span id="cb5-45"><a href="#cb5-45"></a><span class="fu">## Exercise 2: Code</span></span>
-<span id="cb5-46"><a href="#cb5-46"></a></span>
-<span id="cb5-47"><a href="#cb5-47"></a>How does this appear in the .qmd? The .html? So...?!</span>
-<span id="cb5-48"><a href="#cb5-48"></a></span>
-<span id="cb5-49"><a href="#cb5-49"></a>seq(from = 100, to = 1000, by = 50)</span>
-<span id="cb5-50"><a href="#cb5-50"></a></span>
-<span id="cb5-51"><a href="#cb5-51"></a></span>
-<span id="cb5-52"><a href="#cb5-52"></a></span>
-<span id="cb5-53"><a href="#cb5-53"></a><span class="fu">## Exercise 3: Chunks</span></span>
-<span id="cb5-54"><a href="#cb5-54"></a></span>
-<span id="cb5-55"><a href="#cb5-55"></a>Quarto isn't a mind reader -- we must distinguish R code from text.</span>
-<span id="cb5-56"><a href="#cb5-56"></a>We do so by putting code inside an **R chunk**:</span>
-<span id="cb5-57"><a href="#cb5-57"></a></span>
-<span id="cb5-60"><a href="#cb5-60"></a><span class="in">```{r}</span></span>
-<span id="cb5-61"><a href="#cb5-61"></a><span class="in">```</span></span>
-<span id="cb5-62"><a href="#cb5-62"></a></span>
-<span id="cb5-63"><a href="#cb5-63"></a><span class="ss">- </span>Put the <span class="in">`seq()`</span> code in the chunk.</span>
-<span id="cb5-64"><a href="#cb5-64"></a><span class="ss">- </span>Press the green arrow in the top right of the chunk. What happens in the qmd?</span>
-<span id="cb5-65"><a href="#cb5-65"></a><span class="ss">- </span>Render. What appears in the html: R code, output, or both?</span>
-<span id="cb5-66"><a href="#cb5-66"></a></span>
-<span id="cb5-67"><a href="#cb5-67"></a></span>
-<span id="cb5-68"><a href="#cb5-68"></a></span>
-<span id="cb5-69"><a href="#cb5-69"></a><span class="fu">## Exercise 4: Practice</span></span>
-<span id="cb5-70"><a href="#cb5-70"></a></span>
-<span id="cb5-71"><a href="#cb5-71"></a><span class="ss">- </span>Use R code to create the following sequence: 10 10 10 10</span>
-<span id="cb5-72"><a href="#cb5-72"></a><span class="ss">- </span>Store the sequence as <span class="in">`four_tens`</span>.</span>
-<span id="cb5-73"><a href="#cb5-73"></a><span class="ss">- </span>Use an R function (which we haven't learned!) to add up the numbers in <span class="in">`four_tens`</span>.</span>
-<span id="cb5-74"><a href="#cb5-74"></a></span>
-<span id="cb5-75"><a href="#cb5-75"></a></span>
-<span id="cb5-76"><a href="#cb5-76"></a></span>
-<span id="cb5-77"><a href="#cb5-77"></a><span class="fu">## Exercise 5: Fix this code</span></span>
-<span id="cb5-78"><a href="#cb5-78"></a></span>
-<span id="cb5-79"><a href="#cb5-79"></a>Code is a form of communication, and the code below doesn't cut it.</span>
-<span id="cb5-80"><a href="#cb5-80"></a></span>
-<span id="cb5-81"><a href="#cb5-81"></a>Put the code in a chunk and fix it.</span>
-<span id="cb5-82"><a href="#cb5-82"></a></span>
-<span id="cb5-83"><a href="#cb5-83"></a>Rep(x = 1, times = 10)</span>
-<span id="cb5-84"><a href="#cb5-84"></a>seq(from=100,to=1000,length=20)</span>
-<span id="cb5-85"><a href="#cb5-85"></a>theNumberofStudentsinthisclass&lt;-27</span>
-<span id="cb5-86"><a href="#cb5-86"></a></span>
-<span id="cb5-87"><a href="#cb5-87"></a></span>
-<span id="cb5-88"><a href="#cb5-88"></a></span>
-<span id="cb5-89"><a href="#cb5-89"></a><span class="fu">## Exercise 6: Comments</span></span>
-<span id="cb5-90"><a href="#cb5-90"></a></span>
-<span id="cb5-91"><a href="#cb5-91"></a>Run the chunk below.</span>
-<span id="cb5-92"><a href="#cb5-92"></a>Notice that R ignores anything in a line starting with a pound sign (<span class="in">`#`</span>).</span>
-<span id="cb5-93"><a href="#cb5-93"></a>If we took the <span class="in">`#`</span> away we'd get an error!</span>
-<span id="cb5-94"><a href="#cb5-94"></a></span>
-<span id="cb5-97"><a href="#cb5-97"></a><span class="in">```{r}</span></span>
-<span id="cb5-98"><a href="#cb5-98"></a><span class="co"># This is a comment</span></span>
-<span id="cb5-99"><a href="#cb5-99"></a><span class="dv">4</span> <span class="sc">+</span> <span class="dv">5</span></span>
-<span id="cb5-100"><a href="#cb5-100"></a><span class="in">```</span></span>
-<span id="cb5-101"><a href="#cb5-101"></a></span>
-<span id="cb5-102"><a href="#cb5-102"></a>We'll utilize this feature to **comment our code**, i.e. leave short notes about what our code is doing.</span>
-<span id="cb5-103"><a href="#cb5-103"></a>Below, replace the <span class="in">`???`</span> with an appropriate comment.</span>
-<span id="cb5-104"><a href="#cb5-104"></a></span>
-<span id="cb5-107"><a href="#cb5-107"></a><span class="in">```{r}</span></span>
-<span id="cb5-108"><a href="#cb5-108"></a><span class="co"># ???</span></span>
-<span id="cb5-109"><a href="#cb5-109"></a>temperature_c <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb5-110"><a href="#cb5-110"></a>temperature_f <span class="ot">&lt;-</span> temperature_c <span class="sc">*</span> <span class="dv">9</span><span class="sc">/</span><span class="dv">5</span> <span class="sc">+</span> <span class="dv">32</span></span>
-<span id="cb5-111"><a href="#cb5-111"></a>temperature_f</span>
-<span id="cb5-112"><a href="#cb5-112"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="co">---</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="an">title:</span><span class="co"> "ica-joining"</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co">  markdown: </span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="co">    wrap: 72</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="co">---</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a></span>
+<span id="cb13-9"><a href="#cb13-9"></a>---</span>
+<span id="cb13-10"><a href="#cb13-10"></a>title: "Joining"</span>
+<span id="cb13-11"><a href="#cb13-11"></a>number-sections: true</span>
+<span id="cb13-12"><a href="#cb13-12"></a>execute: </span>
+<span id="cb13-13"><a href="#cb13-13"></a>  warning: false</span>
+<span id="cb13-14"><a href="#cb13-14"></a>fig-env: 'figure'</span>
+<span id="cb13-15"><a href="#cb13-15"></a>fig-pos: 'h'</span>
+<span id="cb13-16"><a href="#cb13-16"></a>fig-align: center</span>
+<span id="cb13-17"><a href="#cb13-17"></a>code-fold: false</span>
+<span id="cb13-18"><a href="#cb13-18"></a>---</span>
+<span id="cb13-19"><a href="#cb13-19"></a></span>
+<span id="cb13-20"><a href="#cb13-20"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb13-21"><a href="#cb13-21"></a>Understand how to *join* different datasets: - mutating joins:</span>
+<span id="cb13-22"><a href="#cb13-22"></a><span class="in">`left_join()`</span>, <span class="in">`inner_join()`</span> and <span class="in">`full_join()`</span> - filtering joins:</span>
+<span id="cb13-23"><a href="#cb13-23"></a><span class="in">`semi_join()`</span>, <span class="in">`anti_join()`</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a>:::</span>
+<span id="cb13-25"><a href="#cb13-25"></a></span>
+<span id="cb13-26"><a href="#cb13-26"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb13-27"><a href="#cb13-27"></a>For more information about the topics covered in this chapter, refer to</span>
+<span id="cb13-28"><a href="#cb13-28"></a>the resources below: - [Demonstration of joining data</span>
+<span id="cb13-29"><a href="#cb13-29"></a>(YouTube)](https://www.youtube.com/watch?v=MJDHRtwZhoM&amp;feature=youtu.be)</span>
+<span id="cb13-30"><a href="#cb13-30"></a>by Lisa Lendway - <span class="co">[</span><span class="ot">Joins</span><span class="co">](https://r4ds.hadley.nz/joins)</span> by Wickham,</span>
+<span id="cb13-31"><a href="#cb13-31"></a>Çetinkaya-Rundel, &amp; Grolemund - [Data wrangling on multiple</span>
+<span id="cb13-32"><a href="#cb13-32"></a>tables](https://mdsr-book.github.io/mdsr2e/ch-join.html) by Baumer,</span>
+<span id="cb13-33"><a href="#cb13-33"></a>Kaplan, and Horton</span>
+<span id="cb13-34"><a href="#cb13-34"></a>:::</span>
+<span id="cb13-35"><a href="#cb13-35"></a></span>
+<span id="cb13-36"><a href="#cb13-36"></a><span class="fu">## Review</span></span>
+<span id="cb13-37"><a href="#cb13-37"></a></span>
+<span id="cb13-38"><a href="#cb13-38"></a>**Where are we? Data preparation**</span>
+<span id="cb13-39"><a href="#cb13-39"></a></span>
+<span id="cb13-40"><a href="#cb13-40"></a><span class="al">![](https://mac-stat.github.io/images/112/legos.png)</span></span>
+<span id="cb13-41"><a href="#cb13-41"></a></span>
+<span id="cb13-42"><a href="#cb13-42"></a>Thus far, we've learned how to: - <span class="in">`arrange()`</span> data meaningfully -</span>
+<span id="cb13-43"><a href="#cb13-43"></a><span class="in">`filter()`</span> rows and <span class="in">`select()`</span> columns - <span class="in">`mutate()`</span> new variables -</span>
+<span id="cb13-44"><a href="#cb13-44"></a><span class="in">`summarize()`</span> variables (with and without <span class="in">`group_by()`</span>) - Reshape data</span>
+<span id="cb13-45"><a href="#cb13-45"></a>(<span class="in">`pivot_longer()`</span>, <span class="in">`pivot_wider()`</span>)</span>
+<span id="cb13-46"><a href="#cb13-46"></a></span>
+<span id="cb13-47"><a href="#cb13-47"></a>------------------------------------------------------------------------</span>
+<span id="cb13-48"><a href="#cb13-48"></a></span>
+<span id="cb13-49"><a href="#cb13-49"></a><span class="fu">## Motivation</span></span>
+<span id="cb13-50"><a href="#cb13-50"></a></span>
+<span id="cb13-51"><a href="#cb13-51"></a>Real-world questions often require combining data from multiple sources,</span>
+<span id="cb13-52"><a href="#cb13-52"></a>e.g.: - Predictors of album sales (combine Spotify + sales data) -</span>
+<span id="cb13-53"><a href="#cb13-53"></a>Predictors of flight delays (combine flight + airline + airport data)</span>
+<span id="cb13-54"><a href="#cb13-54"></a></span>
+<span id="cb13-55"><a href="#cb13-55"></a>------------------------------------------------------------------------</span>
+<span id="cb13-56"><a href="#cb13-56"></a></span>
+<span id="cb13-57"><a href="#cb13-57"></a><span class="fu">## Mutating Joins: `left`, `inner`, `full`</span></span>
+<span id="cb13-58"><a href="#cb13-58"></a></span>
+<span id="cb13-59"><a href="#cb13-59"></a><span class="fu">### Example 1 {.unnumbered}</span></span>
+<span id="cb13-60"><a href="#cb13-60"></a></span>
+<span id="cb13-63"><a href="#cb13-63"></a><span class="in">```{r}</span></span>
+<span id="cb13-64"><a href="#cb13-64"></a>students_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-65"><a href="#cb13-65"></a>  <span class="at">student =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>),</span>
+<span id="cb13-66"><a href="#cb13-66"></a>  <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"STAT 101"</span>, <span class="st">"GEOL 101"</span>, <span class="st">"ANTH 101"</span>)</span>
+<span id="cb13-67"><a href="#cb13-67"></a>)</span>
+<span id="cb13-68"><a href="#cb13-68"></a>enrollments_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-69"><a href="#cb13-69"></a>  <span class="at">class =</span> <span class="fu">c</span>(<span class="st">"STAT 101"</span>, <span class="st">"ART 101"</span>, <span class="st">"GEOL 101"</span>),</span>
+<span id="cb13-70"><a href="#cb13-70"></a>  <span class="at">enrollment =</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">24</span>)</span>
+<span id="cb13-71"><a href="#cb13-71"></a>)</span>
+<span id="cb13-72"><a href="#cb13-72"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb13-73"><a href="#cb13-73"></a></span>
+<span id="cb13-74"><a href="#cb13-74"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-75"><a href="#cb13-75"></a>  <span class="fu">left_join</span>(enrollments_1)</span>
+<span id="cb13-76"><a href="#cb13-76"></a></span>
+<span id="cb13-77"><a href="#cb13-77"></a>enrollments_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-78"><a href="#cb13-78"></a>  <span class="fu">left_join</span>(students_1)</span>
+<span id="cb13-79"><a href="#cb13-79"></a></span>
+<span id="cb13-80"><a href="#cb13-80"></a></span>
+<span id="cb13-81"><a href="#cb13-81"></a><span class="in">```</span></span>
+<span id="cb13-82"><a href="#cb13-82"></a></span>
+<span id="cb13-85"><a href="#cb13-85"></a><span class="in">```{r}</span></span>
+<span id="cb13-86"><a href="#cb13-86"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-87"><a href="#cb13-87"></a>  <span class="fu">inner_join</span>(enrollments_1)</span>
+<span id="cb13-88"><a href="#cb13-88"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-89"><a href="#cb13-89"></a>  <span class="fu">full_join</span>(enrollments_1)</span>
+<span id="cb13-90"><a href="#cb13-90"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-91"><a href="#cb13-91"></a>  <span class="fu">anti_join</span>(enrollments_1)</span>
+<span id="cb13-92"><a href="#cb13-92"></a>students_1 <span class="sc">|&gt;</span> </span>
+<span id="cb13-93"><a href="#cb13-93"></a>  <span class="fu">semi_join</span>(enrollments_1)</span>
+<span id="cb13-94"><a href="#cb13-94"></a></span>
+<span id="cb13-95"><a href="#cb13-95"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

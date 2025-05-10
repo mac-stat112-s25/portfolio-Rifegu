@@ -470,5 +470,38 @@
       "In-class Activities",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Reshaping</span>"
     ]
+  },
+  {
+    "objectID": "ica/ica-joining.html",
+    "href": "ica/ica-joining.html",
+    "title": "Joining",
+    "section": "",
+    "text": "19.1 Review\nWhere are we? Data preparation\nThus far, we’ve learned how to: - arrange() data meaningfully - filter() rows and select() columns - mutate() new variables - summarize() variables (with and without group_by()) - Reshape data (pivot_longer(), pivot_wider())",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Joining</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-joining.html#motivation",
+    "href": "ica/ica-joining.html#motivation",
+    "title": "Joining",
+    "section": "\n19.2 Motivation",
+    "text": "19.2 Motivation\nReal-world questions often require combining data from multiple sources, e.g.: - Predictors of album sales (combine Spotify + sales data) - Predictors of flight delays (combine flight + airline + airport data)",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Joining</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-joining.html#mutating-joins-left-inner-full",
+    "href": "ica/ica-joining.html#mutating-joins-left-inner-full",
+    "title": "Joining",
+    "section": "\n19.3 Mutating Joins: left, inner, full\n",
+    "text": "19.3 Mutating Joins: left, inner, full\n\nExample 1\n\nstudents_1 &lt;- data.frame(\n  student = c(\"A\", \"B\", \"C\"),\n  class = c(\"STAT 101\", \"GEOL 101\", \"ANTH 101\")\n)\nenrollments_1 &lt;- data.frame(\n  class = c(\"STAT 101\", \"ART 101\", \"GEOL 101\"),\n  enrollment = c(18, 17, 24)\n)\nlibrary(tidyverse)\n\nstudents_1 |&gt; \n  left_join(enrollments_1)\n\n  student    class enrollment\n1       A STAT 101         18\n2       B GEOL 101         24\n3       C ANTH 101         NA\n\nenrollments_1 |&gt; \n  left_join(students_1)\n\n     class enrollment student\n1 STAT 101         18       A\n2  ART 101         17    &lt;NA&gt;\n3 GEOL 101         24       B\n\n\n\nstudents_1 |&gt; \n  inner_join(enrollments_1)\n\n  student    class enrollment\n1       A STAT 101         18\n2       B GEOL 101         24\n\nstudents_1 |&gt; \n  full_join(enrollments_1)\n\n  student    class enrollment\n1       A STAT 101         18\n2       B GEOL 101         24\n3       C ANTH 101         NA\n4    &lt;NA&gt;  ART 101         17\n\nstudents_1 |&gt; \n  anti_join(enrollments_1)\n\n  student    class\n1       C ANTH 101\n\nstudents_1 |&gt; \n  semi_join(enrollments_1)\n\n  student    class\n1       A STAT 101\n2       B GEOL 101",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Joining</span>"
+    ]
   }
 ]
