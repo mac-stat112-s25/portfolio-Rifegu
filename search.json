@@ -503,5 +503,27 @@
       "In-class Activities",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Joining</span>"
     ]
+  },
+  {
+    "objectID": "ica/ica-factors.html",
+    "href": "ica/ica-factors.html",
+    "title": "Factors",
+    "section": "",
+    "text": "21 Review\nWe’ve learned: - Wrangling: arrange(), filter(), select(), mutate(), summarize() - Reshaping: pivot_longer(), pivot_wider() - Joining datasets: join()",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Factors</span>"
+    ]
+  },
+  {
+    "objectID": "ica/ica-factors.html#example-1-default-order",
+    "href": "ica/ica-factors.html#example-1-default-order",
+    "title": "Factors",
+    "section": "\n22.1 Example 1: Default Order",
+    "text": "22.1 Example 1: Default Order\n\nlibrary(tidyverse)\n\nelections &lt;- read.csv(\"https://mac-stat.github.io/data/election_2020_county.csv\") |&gt; select(state_abbr, historical, county_name, total_votes_20, repub_pct_20, dem_pct_20) |&gt; mutate(dem_support_20 = case_when( (repub_pct_20 - dem_pct_20 &gt;= 5) ~ \"low\", (repub_pct_20 - dem_pct_20 &lt;= -5) ~ \"high\", .default = \"medium\" ))\n\n\n\nhead(elections)\n\n  state_abbr historical    county_name total_votes_20 repub_pct_20 dem_pct_20\n1         AL        red Autauga County          27770        71.44      27.02\n2         AL        red Baldwin County         109679        76.17      22.41\n3         AL        red Barbour County          10518        53.45      45.79\n4         AL        red    Bibb County           9595        78.43      20.70\n5         AL        red  Blount County          27588        89.57       9.57\n6         AL        red Bullock County           4613        24.84      74.70\n  dem_support_20\n1            low\n2            low\n3            low\n4            low\n5            low\n6           high\n\nggplot(elections, aes(x = dem_support_20)) + geom_bar()\n\n\n\n\n\n\n\n\nelections &lt;- elections |&gt; \n  mutate(dem_support_20 = fct_relevel(dem_support_20, c(\"low\", \"medium\", \"high\")))\n\nstr(elections)\n\n'data.frame':   3109 obs. of  7 variables:\n $ state_abbr    : chr  \"AL\" \"AL\" \"AL\" \"AL\" ...\n $ historical    : chr  \"red\" \"red\" \"red\" \"red\" ...\n $ county_name   : chr  \"Autauga County\" \"Baldwin County\" \"Barbour County\" \"Bibb County\" ...\n $ total_votes_20: int  27770 109679 10518 9595 27588 4613 9488 50983 15284 12301 ...\n $ repub_pct_20  : num  71.4 76.2 53.5 78.4 89.6 ...\n $ dem_pct_20    : num  27.02 22.41 45.79 20.7 9.57 ...\n $ dem_support_20: Factor w/ 3 levels \"low\",\"medium\",..: 1 1 1 1 1 3 1 1 1 1 ...\n\nggplot(elections, aes(x = dem_support_20)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nelections &lt;- elections |&gt; \n  mutate(results_20 = fct_recode(dem_support_20, \n                                 \"strong republican\" = \"low\",\n                                 \"close race\" = \"medium\",\n                                 \"strong democrat\" = \"high\"))\n\nelections |&gt; \n  count(results_20)\n\n         results_20    n\n1 strong republican 2494\n2        close race  157\n3   strong democrat  458\n\n\n\nlibrary(ggridges)\n\nelections |&gt; \n  ggplot(aes(x = repub_pct_20, y = state_abbr, fill = historical)) +\n    geom_density_ridges() +\n    scale_fill_manual(values = c(\"blue\", \"purple\", \"red\"))\n\n\n\n\n\n\n\n\nelections |&gt; \n  mutate(state_abbr = fct_reorder(state_abbr, repub_pct_20, .fun = \"median\", .desc = TRUE)) |&gt; \n  ggplot(aes(x = repub_pct_20, y = state_abbr, fill = historical)) +\n    geom_density_ridges() +\n    scale_fill_manual(values = c(\"blue\", \"purple\", \"red\"))",
+    "crumbs": [
+      "In-class Activities",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Factors</span>"
+    ]
   }
 ]

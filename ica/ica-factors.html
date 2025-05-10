@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>18&nbsp; Reshaping – COMP/STAT112 Notebook</title>
+<title>Factors – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ica/ica-joining.html" rel="next">
-<link href="../ica/ica-dates.html" rel="prev">
+<link href="../ica/ica-joining.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-factors.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Factors</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -276,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></span></a>
   </div>
 </li>
@@ -288,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-factors.html" class="sidebar-item-text sidebar-link">
+  <a href="../ica/ica-factors.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Factors</span></span></a>
   </div>
 </li>
@@ -298,14 +297,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review"><span class="header-section-number">21</span> Review</a></li>
+  <li>
+<a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">22</span> Factors</a>
+  <ul class="collapse">
+<li><a href="#example-1-default-order" id="toc-example-1-default-order" class="nav-link" data-scroll-target="#example-1-default-order"><span class="header-section-number">22.1</span> Example 1: Default Order</a></li>
+  </ul>
+</li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></a></li></ol></nav><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-factors.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Factors</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Factors</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -330,10 +337,9 @@ Learning Goals
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Understand what it means to “reshape” data.</li>
-<li>Understand the difference between <em>wide</em> and <em>long</em> data formats.</li>
-<li>Be able to distinguish the units of observation for a given data set.</li>
-<li>Explore how to reshape data using <code>pivot_wider()</code> and <code>pivot_longer()</code> from <code>tidyr</code> package</li>
+<li>Understand the difference between <code>character</code> and <code>factor</code> variables.</li>
+<li>Be able to convert a <code>character</code> variable to a <code>factor</code>.</li>
+<li>Develop comfort manipulating the order and values of a factor.</li>
 </ul>
 </div>
 </div>
@@ -347,205 +353,126 @@ Additional Resources
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For more information about the topics covered in this chapter, refer to the resources below:</p>
 <ul>
-<li>
-<a href="https://www.youtube.com/watch?v=k3SZ8keibuQ&amp;feature=youtu.be">Demonstrating pivoting (YouTube)</a> by Lisa Lendway</li>
-<li>
-<a href="https://tidyr.tidyverse.org/articles/pivot.html">Pivoting vignette (html)</a> by tidyr</li>
-<li>
-<a href="https://r4ds.hadley.nz/data-tidy.html#sec-pivoting">Pivoting (html)</a> by Wickham and Grolemund</li>
-<li>
-<a href="https://mdsr-book.github.io/mdsr2e/ch-dataII.html#reshaping-data">Reshaping data</a> by Baumer, Kaplan, and Horton</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/main/factors.pdf">forcats cheat sheet (pdf)</a></li>
+<li><a href="https://r4ds.hadley.nz/factors">Factors (r4ds)</a></li>
 </ul>
-<section id="section" class="level2" data-number="18.1"><h2 data-number="18.1" class="anchored" data-anchor-id="section">
-<span class="header-section-number">18.1</span> </h2>
-</section>
+</div>
+</div>
+<section id="review" class="level1" data-number="21"><h1 data-number="21">
+<span class="header-section-number">21</span> Review</h1>
+<p><img src="https://mac-stat.github.io/images/112/legos.png" class="img-fluid"></p>
+<p>We’ve learned: - Wrangling: <code>arrange()</code>, <code><a href="https://rdrr.io/r/stats/filter.html">filter()</a></code>, <code>select()</code>, <code>mutate()</code>, <code>summarize()</code> - Reshaping: <code>pivot_longer()</code>, <code>pivot_wider()</code> - Joining datasets: <code>join()</code></p>
+</section><section id="factors" class="level1" data-number="22"><h1 data-number="22">
+<span class="header-section-number">22</span> Factors</h1>
+<p>We’ll focus on: - <strong>Working with character variables</strong> (detect/replace patterns) - <strong>Converting characters to factors</strong> (today)</p>
+<hr>
+<section id="example-1-default-order" class="level2" data-number="22.1"><h2 data-number="22.1" class="anchored" data-anchor-id="example-1-default-order">
+<span class="header-section-number">22.1</span> Example 1: Default Order</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>elections <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/election_2020_county.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(state_abbr, historical, county_name, total_votes_20, repub_pct_20, dem_pct_20) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">dem_support_20 =</span> <span class="fu">case_when</span>( (repub_pct_20 <span class="sc">-</span> dem_pct_20 <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">~</span> <span class="st">"low"</span>, (repub_pct_20 <span class="sc">-</span> dem_pct_20 <span class="sc">&lt;=</span> <span class="sc">-</span><span class="dv">5</span>) <span class="sc">~</span> <span class="st">"high"</span>, <span class="at">.default =</span> <span class="st">"medium"</span> ))</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">head</span>(elections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  state_abbr historical    county_name total_votes_20 repub_pct_20 dem_pct_20
+1         AL        red Autauga County          27770        71.44      27.02
+2         AL        red Baldwin County         109679        76.17      22.41
+3         AL        red Barbour County          10518        53.45      45.79
+4         AL        red    Bibb County           9595        78.43      20.70
+5         AL        red  Blount County          27588        89.57       9.57
+6         AL        red Bullock County           4613        24.84      74.70
+  dem_support_20
+1            low
+2            low
+3            low
+4            low
+5            low
+6           high</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">x =</span> dem_support_20)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-factors_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb1-2"><a href="#cb1-2"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>penguins <span class="sc">|&gt;</span> <span class="fu">count</span>(species, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>elections <span class="ot">&lt;-</span> elections <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">mutate</span>(<span class="at">dem_support_20 =</span> <span class="fu">fct_relevel</span>(dem_support_20, <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>)))</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">str</span>(elections)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 3
-  species   sex        n
-  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;
-1 Adelie    female    73
-2 Adelie    male      73
-3 Adelie    &lt;NA&gt;       6
-4 Chinstrap female    34
-5 Chinstrap male      34
-6 Gentoo    female    58
-7 Gentoo    male      61
-8 Gentoo    &lt;NA&gt;       5</code></pre>
+<pre><code>'data.frame':   3109 obs. of  7 variables:
+ $ state_abbr    : chr  "AL" "AL" "AL" "AL" ...
+ $ historical    : chr  "red" "red" "red" "red" ...
+ $ county_name   : chr  "Autauga County" "Baldwin County" "Barbour County" "Bibb County" ...
+ $ total_votes_20: int  27770 109679 10518 9595 27588 4613 9488 50983 15284 12301 ...
+ $ repub_pct_20  : num  71.4 76.2 53.5 78.4 89.6 ...
+ $ dem_pct_20    : num  27.02 22.41 45.79 20.7 9.57 ...
+ $ dem_support_20: Factor w/ 3 levels "low","medium",..: 1 1 1 1 1 3 1 1 1 1 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 3
-# Groups:   species [3]
-  species   sex    `n()`
-  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;
-1 Adelie    female    73
-2 Adelie    male      73
-3 Adelie    &lt;NA&gt;       6
-4 Chinstrap female    34
-5 Chinstrap male      34
-6 Gentoo    female    58
-7 Gentoo    male      61
-8 Gentoo    &lt;NA&gt;       5</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">x =</span> dem_support_20)) <span class="sc">+</span> </span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-factors_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">proportion =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 4
-# Groups:   species [3]
-  species   sex        n proportion
-  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;      &lt;dbl&gt;
-1 Adelie    female    73     0.480 
-2 Adelie    male      73     0.480 
-3 Adelie    &lt;NA&gt;       6     0.0395
-4 Chinstrap female    34     0.5   
-5 Chinstrap male      34     0.5   
-6 Gentoo    female    58     0.468 
-7 Gentoo    male      61     0.492 
-8 Gentoo    &lt;NA&gt;       5     0.0403</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># Units of observation = penguins</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>elections <span class="ot">&lt;-</span> elections <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">mutate</span>(<span class="at">results_20 =</span> <span class="fu">fct_recode</span>(dem_support_20, </span>
+<span id="cb7-3"><a href="#cb7-3"></a>                                 <span class="st">"strong republican"</span> <span class="ot">=</span> <span class="st">"low"</span>,</span>
+<span id="cb7-4"><a href="#cb7-4"></a>                                 <span class="st">"close race"</span> <span class="ot">=</span> <span class="st">"medium"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>                                 <span class="st">"strong democrat"</span> <span class="ot">=</span> <span class="st">"high"</span>))</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb7-8"><a href="#cb7-8"></a>  <span class="fu">count</span>(results_20)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 8
-  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
-1 Adelie  Torgersen           39.1          18.7               181        3750
-2 Adelie  Torgersen           39.5          17.4               186        3800
-3 Adelie  Torgersen           40.3          18                 195        3250
-4 Adelie  Torgersen           NA            NA                  NA          NA
-5 Adelie  Torgersen           36.7          19.3               193        3450
-6 Adelie  Torgersen           39.3          20.6               190        3650
-# ℹ 2 more variables: sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Units of observation = species/sex combos</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">head</span>(penguin_avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-# Groups:   species [3]
-  species   sex    avg_body_mass
-  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
-1 Adelie    female         3369.
-2 Adelie    male           4043.
-3 Chinstrap female         3527.
-4 Chinstrap male           3939.
-5 Gentoo    female         4680.
-6 Gentoo    male           5485.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>penguin_avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-# Groups:   species [3]
-  species   sex    avg_body_mass
-  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
-1 Adelie    female         3369.
-2 Adelie    male           4043.
-3 Chinstrap female         3527.
-4 Chinstrap male           3939.
-5 Gentoo    female         4680.
-6 Gentoo    male           5485.</code></pre>
+<pre><code>         results_20    n
+1 strong republican 2494
+2        close race  157
+3   strong democrat  458</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>penguin_avg <span class="sc">|&gt;</span> </span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-# Groups:   species [3]
-  species   female  male
-  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-1 Adelie     3369. 4043.
-2 Chinstrap  3527. 3939.
-3 Gentoo     4680. 5485.</code></pre>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb9-4"><a href="#cb9-4"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> repub_pct_20, <span class="at">y =</span> state_abbr, <span class="at">fill =</span> historical)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"red"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-factors_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
-<span id="cb15-3"><a href="#cb15-3"></a></span>
-<span id="cb15-4"><a href="#cb15-4"></a>penguin_avg_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-# Groups:   species [3]
-  species   female  male
-  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
-1 Adelie     3369. 4043.
-2 Chinstrap  3527. 3939.
-3 Gentoo     4680. 5485.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Pivot longer again</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-# Groups:   species [3]
-  species   sex    avg_body_mass
-  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
-1 Adelie    female         3369.
-2 Adelie    male           4043.
-3 Chinstrap female         3527.
-4 Chinstrap male           3939.
-5 Gentoo    female         4680.
-6 Gentoo    male           5485.</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
-<span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5"></a>)</span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># Make wide</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a>food <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 4
-  customer Shish   FrenchMeadow DunnBros
-  &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;   
-1 A        falafel salad        coffee  
-2 B        baklava pastry       tea     </code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">mutate</span>(<span class="at">state_abbr =</span> <span class="fu">fct_reorder</span>(state_abbr, repub_pct_20, <span class="at">.fun =</span> <span class="st">"median"</span>, <span class="at">.desc =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> repub_pct_20, <span class="at">y =</span> state_abbr, <span class="at">fill =</span> historical)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"red"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-factors_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
-<span id="cb21-3"><a href="#cb21-3"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
-<span id="cb21-5"><a href="#cb21-5"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
-<span id="cb21-6"><a href="#cb21-6"></a>)</span>
-<span id="cb21-7"><a href="#cb21-7"></a></span>
-<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># Make long</span></span>
-<span id="cb21-9"><a href="#cb21-9"></a>more_food <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>customer, <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  customer restaurant   order   
-  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   
-1 C        Shish        coffee  
-2 C        FrenchMeadow soup    
-3 C        DunnBros     cookie  
-4 D        Shish        maza    
-5 D        FrenchMeadow sandwich
-6 D        DunnBros     coffee  </code></pre>
 </div>
 </div>
 
 
 <!-- -->
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1165,111 +1092,118 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../ica/ica-dates.html" class="pagination-link" aria-label="Dates">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Dates</span></span>
+      <a href="../ica/ica-joining.html" class="pagination-link" aria-label="Joining">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ica/ica-joining.html" class="pagination-link" aria-label="Joining">
-        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Joining</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">---</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="an">title:</span><span class="co"> "Reshaping"</span></span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb23-4"><a href="#cb23-4"></a><span class="an">execute:</span><span class="co"> </span></span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="co">  warning: false</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a><span class="an">fig-env:</span><span class="co"> 'figure'</span></span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="an">fig-pos:</span><span class="co"> 'h'</span></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="an">fig-align:</span><span class="co"> center</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
-<span id="cb23-10"><a href="#cb23-10"></a><span class="co">---</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a></span>
-<span id="cb23-12"><a href="#cb23-12"></a>::: {.callout-caution title="Learning Goals"}</span>
-<span id="cb23-13"><a href="#cb23-13"></a><span class="ss">-   </span>Understand what it means to "reshape" data.</span>
-<span id="cb23-14"><a href="#cb23-14"></a><span class="ss">-   </span>Understand the difference between *wide* and *long* data formats.</span>
-<span id="cb23-15"><a href="#cb23-15"></a><span class="ss">-   </span>Be able to distinguish the units of observation for a given data set.</span>
-<span id="cb23-16"><a href="#cb23-16"></a><span class="ss">-   </span>Explore how to reshape data using <span class="in">`pivot_wider()`</span> and <span class="in">`pivot_longer()`</span> from <span class="in">`tidyr`</span> package</span>
-<span id="cb23-17"><a href="#cb23-17"></a>:::</span>
-<span id="cb23-18"><a href="#cb23-18"></a></span>
-<span id="cb23-19"><a href="#cb23-19"></a>::: {.callout-note title="Additional Resources"}</span>
-<span id="cb23-20"><a href="#cb23-20"></a>For more information about the topics covered in this chapter, refer to the resources below:</span>
-<span id="cb23-21"><a href="#cb23-21"></a></span>
-<span id="cb23-22"><a href="#cb23-22"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Demonstrating pivoting (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=k3SZ8keibuQ&amp;feature=youtu.be)</span> by Lisa Lendway</span>
-<span id="cb23-23"><a href="#cb23-23"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Pivoting vignette (html)</span><span class="co">](https://tidyr.tidyverse.org/articles/pivot.html)</span> by tidyr</span>
-<span id="cb23-24"><a href="#cb23-24"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Pivoting (html)</span><span class="co">](https://r4ds.hadley.nz/data-tidy.html#sec-pivoting)</span> by Wickham and Grolemund</span>
-<span id="cb23-25"><a href="#cb23-25"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Reshaping data</span><span class="co">](https://mdsr-book.github.io/mdsr2e/ch-dataII.html#reshaping-data)</span> by Baumer, Kaplan, and Horton</span>
-<span id="cb23-26"><a href="#cb23-26"></a></span>
-<span id="cb23-27"><a href="#cb23-27"></a><span class="fu">## </span></span>
-<span id="cb23-28"><a href="#cb23-28"></a>:::</span>
-<span id="cb23-29"><a href="#cb23-29"></a></span>
-<span id="cb23-32"><a href="#cb23-32"></a><span class="in">```{r}</span></span>
-<span id="cb23-33"><a href="#cb23-33"></a><span class="fu">library</span>(tidyverse) </span>
-<span id="cb23-34"><a href="#cb23-34"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span>
-<span id="cb23-35"><a href="#cb23-35"></a></span>
-<span id="cb23-36"><a href="#cb23-36"></a>penguins <span class="sc">|&gt;</span> <span class="fu">count</span>(species, sex)</span>
-<span id="cb23-37"><a href="#cb23-37"></a></span>
-<span id="cb23-38"><a href="#cb23-38"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">n</span>())</span>
-<span id="cb23-39"><a href="#cb23-39"></a></span>
-<span id="cb23-40"><a href="#cb23-40"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">proportion =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
-<span id="cb23-41"><a href="#cb23-41"></a><span class="in">```</span></span>
-<span id="cb23-42"><a href="#cb23-42"></a></span>
-<span id="cb23-45"><a href="#cb23-45"></a><span class="in">```{r}</span></span>
-<span id="cb23-46"><a href="#cb23-46"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
-<span id="cb23-47"><a href="#cb23-47"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
-<span id="cb23-48"><a href="#cb23-48"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb23-49"><a href="#cb23-49"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb23-50"><a href="#cb23-50"></a></span>
-<span id="cb23-51"><a href="#cb23-51"></a><span class="co"># Units of observation = penguins</span></span>
-<span id="cb23-52"><a href="#cb23-52"></a><span class="fu">head</span>(penguins)</span>
-<span id="cb23-53"><a href="#cb23-53"></a></span>
-<span id="cb23-54"><a href="#cb23-54"></a><span class="co"># Units of observation = species/sex combos</span></span>
-<span id="cb23-55"><a href="#cb23-55"></a><span class="fu">head</span>(penguin_avg)</span>
-<span id="cb23-56"><a href="#cb23-56"></a>penguin_avg</span>
-<span id="cb23-57"><a href="#cb23-57"></a></span>
-<span id="cb23-58"><a href="#cb23-58"></a></span>
-<span id="cb23-59"><a href="#cb23-59"></a><span class="in">```</span></span>
-<span id="cb23-60"><a href="#cb23-60"></a></span>
-<span id="cb23-63"><a href="#cb23-63"></a><span class="in">```{r}</span></span>
-<span id="cb23-64"><a href="#cb23-64"></a>penguin_avg <span class="sc">|&gt;</span> </span>
-<span id="cb23-65"><a href="#cb23-65"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
-<span id="cb23-66"><a href="#cb23-66"></a></span>
-<span id="cb23-67"><a href="#cb23-67"></a><span class="in">```</span></span>
-<span id="cb23-68"><a href="#cb23-68"></a></span>
-<span id="cb23-71"><a href="#cb23-71"></a><span class="in">```{r}</span></span>
-<span id="cb23-72"><a href="#cb23-72"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
-<span id="cb23-73"><a href="#cb23-73"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
-<span id="cb23-74"><a href="#cb23-74"></a></span>
-<span id="cb23-75"><a href="#cb23-75"></a>penguin_avg_wide</span>
-<span id="cb23-76"><a href="#cb23-76"></a></span>
-<span id="cb23-77"><a href="#cb23-77"></a><span class="co"># Pivot longer again</span></span>
-<span id="cb23-78"><a href="#cb23-78"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
-<span id="cb23-79"><a href="#cb23-79"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span>
-<span id="cb23-80"><a href="#cb23-80"></a></span>
-<span id="cb23-81"><a href="#cb23-81"></a><span class="in">```</span></span>
-<span id="cb23-82"><a href="#cb23-82"></a></span>
-<span id="cb23-85"><a href="#cb23-85"></a><span class="in">```{r}</span></span>
-<span id="cb23-86"><a href="#cb23-86"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb23-87"><a href="#cb23-87"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
-<span id="cb23-88"><a href="#cb23-88"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
-<span id="cb23-89"><a href="#cb23-89"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
-<span id="cb23-90"><a href="#cb23-90"></a>)</span>
-<span id="cb23-91"><a href="#cb23-91"></a></span>
-<span id="cb23-92"><a href="#cb23-92"></a><span class="co"># Make wide</span></span>
-<span id="cb23-93"><a href="#cb23-93"></a>food <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span>
-<span id="cb23-94"><a href="#cb23-94"></a></span>
-<span id="cb23-95"><a href="#cb23-95"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb23-96"><a href="#cb23-96"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
-<span id="cb23-97"><a href="#cb23-97"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
-<span id="cb23-98"><a href="#cb23-98"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
-<span id="cb23-99"><a href="#cb23-99"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
-<span id="cb23-100"><a href="#cb23-100"></a>)</span>
-<span id="cb23-101"><a href="#cb23-101"></a></span>
-<span id="cb23-102"><a href="#cb23-102"></a><span class="co"># Make long</span></span>
-<span id="cb23-103"><a href="#cb23-103"></a>more_food <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>customer, <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span>
-<span id="cb23-104"><a href="#cb23-104"></a></span>
-<span id="cb23-105"><a href="#cb23-105"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="an">title:</span><span class="co"> "ica-factors"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co">  markdown: </span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="co">    wrap: 72</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co">---</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a>---</span>
+<span id="cb11-10"><a href="#cb11-10"></a>title: "Factors"</span>
+<span id="cb11-11"><a href="#cb11-11"></a>number-sections: true</span>
+<span id="cb11-12"><a href="#cb11-12"></a>execute: </span>
+<span id="cb11-13"><a href="#cb11-13"></a>  warning: false</span>
+<span id="cb11-14"><a href="#cb11-14"></a>fig-env: 'figure'</span>
+<span id="cb11-15"><a href="#cb11-15"></a>fig-pos: 'h'</span>
+<span id="cb11-16"><a href="#cb11-16"></a>fig-align: center</span>
+<span id="cb11-17"><a href="#cb11-17"></a>code-fold: false</span>
+<span id="cb11-18"><a href="#cb11-18"></a>---</span>
+<span id="cb11-19"><a href="#cb11-19"></a></span>
+<span id="cb11-20"><a href="#cb11-20"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="ss">-   </span>Understand the difference between <span class="in">`character`</span> and <span class="in">`factor`</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a>    variables.</span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="ss">-   </span>Be able to convert a <span class="in">`character`</span> variable to a <span class="in">`factor`</span>.</span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="ss">-   </span>Develop comfort manipulating the order and values of a factor.</span>
+<span id="cb11-25"><a href="#cb11-25"></a>:::</span>
+<span id="cb11-26"><a href="#cb11-26"></a></span>
+<span id="cb11-27"><a href="#cb11-27"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="ss">-   </span>[forcats cheat sheet</span>
+<span id="cb11-29"><a href="#cb11-29"></a>    (pdf)](https://github.com/rstudio/cheatsheets/raw/main/factors.pdf)</span>
+<span id="cb11-30"><a href="#cb11-30"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Factors (r4ds)</span><span class="co">](https://r4ds.hadley.nz/factors)</span></span>
+<span id="cb11-31"><a href="#cb11-31"></a>:::</span>
+<span id="cb11-32"><a href="#cb11-32"></a></span>
+<span id="cb11-33"><a href="#cb11-33"></a><span class="fu"># Review</span></span>
+<span id="cb11-34"><a href="#cb11-34"></a></span>
+<span id="cb11-35"><a href="#cb11-35"></a><span class="al">![](https://mac-stat.github.io/images/112/legos.png)</span></span>
+<span id="cb11-36"><a href="#cb11-36"></a></span>
+<span id="cb11-37"><a href="#cb11-37"></a>We've learned: - Wrangling: <span class="in">`arrange()`</span>, <span class="in">`filter()`</span>, <span class="in">`select()`</span>,</span>
+<span id="cb11-38"><a href="#cb11-38"></a><span class="in">`mutate()`</span>, <span class="in">`summarize()`</span> - Reshaping: <span class="in">`pivot_longer()`</span>,</span>
+<span id="cb11-39"><a href="#cb11-39"></a><span class="in">`pivot_wider()`</span> - Joining datasets: <span class="in">`join()`</span></span>
+<span id="cb11-40"><a href="#cb11-40"></a></span>
+<span id="cb11-41"><a href="#cb11-41"></a><span class="fu"># Factors</span></span>
+<span id="cb11-42"><a href="#cb11-42"></a></span>
+<span id="cb11-43"><a href="#cb11-43"></a>We'll focus on: - **Working with character variables** (detect/replace</span>
+<span id="cb11-44"><a href="#cb11-44"></a>patterns) - **Converting characters to factors** (today)</span>
+<span id="cb11-45"><a href="#cb11-45"></a></span>
+<span id="cb11-46"><a href="#cb11-46"></a>------------------------------------------------------------------------</span>
+<span id="cb11-47"><a href="#cb11-47"></a></span>
+<span id="cb11-48"><a href="#cb11-48"></a><span class="fu">## Example 1: Default Order</span></span>
+<span id="cb11-49"><a href="#cb11-49"></a></span>
+<span id="cb11-52"><a href="#cb11-52"></a><span class="in">```{r}</span></span>
+<span id="cb11-53"><a href="#cb11-53"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-54"><a href="#cb11-54"></a></span>
+<span id="cb11-55"><a href="#cb11-55"></a>elections <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/election_2020_county.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(state_abbr, historical, county_name, total_votes_20, repub_pct_20, dem_pct_20) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">dem_support_20 =</span> <span class="fu">case_when</span>( (repub_pct_20 <span class="sc">-</span> dem_pct_20 <span class="sc">&gt;=</span> <span class="dv">5</span>) <span class="sc">~</span> <span class="st">"low"</span>, (repub_pct_20 <span class="sc">-</span> dem_pct_20 <span class="sc">&lt;=</span> <span class="sc">-</span><span class="dv">5</span>) <span class="sc">~</span> <span class="st">"high"</span>, <span class="at">.default =</span> <span class="st">"medium"</span> ))</span>
+<span id="cb11-56"><a href="#cb11-56"></a></span>
+<span id="cb11-57"><a href="#cb11-57"></a></span>
+<span id="cb11-58"><a href="#cb11-58"></a></span>
+<span id="cb11-59"><a href="#cb11-59"></a><span class="fu">head</span>(elections)</span>
+<span id="cb11-60"><a href="#cb11-60"></a></span>
+<span id="cb11-61"><a href="#cb11-61"></a></span>
+<span id="cb11-62"><a href="#cb11-62"></a></span>
+<span id="cb11-63"><a href="#cb11-63"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">x =</span> dem_support_20)) <span class="sc">+</span> <span class="fu">geom_bar</span>()</span>
+<span id="cb11-64"><a href="#cb11-64"></a><span class="in">```</span></span>
+<span id="cb11-65"><a href="#cb11-65"></a></span>
+<span id="cb11-68"><a href="#cb11-68"></a><span class="in">```{r}</span></span>
+<span id="cb11-69"><a href="#cb11-69"></a>elections <span class="ot">&lt;-</span> elections <span class="sc">|&gt;</span> </span>
+<span id="cb11-70"><a href="#cb11-70"></a>  <span class="fu">mutate</span>(<span class="at">dem_support_20 =</span> <span class="fu">fct_relevel</span>(dem_support_20, <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>)))</span>
+<span id="cb11-71"><a href="#cb11-71"></a></span>
+<span id="cb11-72"><a href="#cb11-72"></a><span class="fu">str</span>(elections)</span>
+<span id="cb11-73"><a href="#cb11-73"></a></span>
+<span id="cb11-74"><a href="#cb11-74"></a><span class="fu">ggplot</span>(elections, <span class="fu">aes</span>(<span class="at">x =</span> dem_support_20)) <span class="sc">+</span> </span>
+<span id="cb11-75"><a href="#cb11-75"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb11-76"><a href="#cb11-76"></a></span>
+<span id="cb11-77"><a href="#cb11-77"></a><span class="in">```</span></span>
+<span id="cb11-78"><a href="#cb11-78"></a></span>
+<span id="cb11-81"><a href="#cb11-81"></a><span class="in">```{r}</span></span>
+<span id="cb11-82"><a href="#cb11-82"></a>elections <span class="ot">&lt;-</span> elections <span class="sc">|&gt;</span> </span>
+<span id="cb11-83"><a href="#cb11-83"></a>  <span class="fu">mutate</span>(<span class="at">results_20 =</span> <span class="fu">fct_recode</span>(dem_support_20, </span>
+<span id="cb11-84"><a href="#cb11-84"></a>                                 <span class="st">"strong republican"</span> <span class="ot">=</span> <span class="st">"low"</span>,</span>
+<span id="cb11-85"><a href="#cb11-85"></a>                                 <span class="st">"close race"</span> <span class="ot">=</span> <span class="st">"medium"</span>,</span>
+<span id="cb11-86"><a href="#cb11-86"></a>                                 <span class="st">"strong democrat"</span> <span class="ot">=</span> <span class="st">"high"</span>))</span>
+<span id="cb11-87"><a href="#cb11-87"></a></span>
+<span id="cb11-88"><a href="#cb11-88"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb11-89"><a href="#cb11-89"></a>  <span class="fu">count</span>(results_20)</span>
+<span id="cb11-90"><a href="#cb11-90"></a></span>
+<span id="cb11-91"><a href="#cb11-91"></a><span class="in">```</span></span>
+<span id="cb11-92"><a href="#cb11-92"></a></span>
+<span id="cb11-95"><a href="#cb11-95"></a><span class="in">```{r}</span></span>
+<span id="cb11-96"><a href="#cb11-96"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb11-97"><a href="#cb11-97"></a></span>
+<span id="cb11-98"><a href="#cb11-98"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb11-99"><a href="#cb11-99"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> repub_pct_20, <span class="at">y =</span> state_abbr, <span class="at">fill =</span> historical)) <span class="sc">+</span></span>
+<span id="cb11-100"><a href="#cb11-100"></a>    <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb11-101"><a href="#cb11-101"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"red"</span>))</span>
+<span id="cb11-102"><a href="#cb11-102"></a></span>
+<span id="cb11-103"><a href="#cb11-103"></a><span class="in">```</span></span>
+<span id="cb11-104"><a href="#cb11-104"></a></span>
+<span id="cb11-107"><a href="#cb11-107"></a><span class="in">```{r}</span></span>
+<span id="cb11-108"><a href="#cb11-108"></a>elections <span class="sc">|&gt;</span> </span>
+<span id="cb11-109"><a href="#cb11-109"></a>  <span class="fu">mutate</span>(<span class="at">state_abbr =</span> <span class="fu">fct_reorder</span>(state_abbr, repub_pct_20, <span class="at">.fun =</span> <span class="st">"median"</span>, <span class="at">.desc =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb11-110"><a href="#cb11-110"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> repub_pct_20, <span class="at">y =</span> state_abbr, <span class="at">fill =</span> historical)) <span class="sc">+</span></span>
+<span id="cb11-111"><a href="#cb11-111"></a>    <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb11-112"><a href="#cb11-112"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"purple"</span>, <span class="st">"red"</span>))</span>
+<span id="cb11-113"><a href="#cb11-113"></a></span>
+<span id="cb11-114"><a href="#cb11-114"></a></span>
+<span id="cb11-115"><a href="#cb11-115"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
