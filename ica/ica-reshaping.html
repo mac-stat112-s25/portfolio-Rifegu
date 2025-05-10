@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>15&nbsp; ica-dataimp – COMP/STAT112 Notebook</title>
+<title>18&nbsp; Reshaping – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,8 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../ica/ica-effective.html" rel="next">
-<link href="../ica/ica-str.html" rel="prev">
+<link href="../ica/ica-dates.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -258,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-dataimp.html" class="sidebar-item-text sidebar-link active">
+  <a href="../ica/ica-dataimp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></span></a>
   </div>
 </li>
@@ -276,7 +275,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link">
+  <a href="../ica/ica-reshaping.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></span></a>
   </div>
 </li>
@@ -290,9 +289,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></a></li></ol></nav><div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-reshaping.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span>
+<span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Reshaping</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -307,179 +306,225 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>exped_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/exped_tidy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 882 Columns: 69
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (22): EXPID, PEAKID, SEASON_FACTOR, HOST_FACTOR, ROUTE1, ROUTE2, NATION...
-dbl  (17): YEAR, SEASON, HOST, SMTDAYS, TOTDAYS, TERMREASON, HIGHPOINT, CAMP...
-lgl  (27): ROUTE3, ROUTE4, SUCCESS1, SUCCESS2, SUCCESS3, SUCCESS4, ASCENT3, ...
-date  (3): BCDATE, SMTDATE, TERMDATE
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</header><div class="callout callout-style-default callout-caution callout-titled" title="Learning Goals">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>peaks_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/peaks_tidy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 480 Columns: 29
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (14): PEAKID, PKNAME, PKNAME2, LOCATION, HIMAL_FACTOR, REGION_FACTOR, RE...
-dbl (12): HEIGHTM, HEIGHTF, HIMAL, REGION, TREKYEAR, PHOST, PSTATUS, PEAKMEM...
-lgl  (3): OPEN, UNLISTED, TREKKING
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="callout-title-container flex-fill">
+Learning Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Understand what it means to “reshape” data.</li>
+<li>Understand the difference between <em>wide</em> and <em>long</em> data formats.</li>
+<li>Be able to distinguish the units of observation for a given data set.</li>
+<li>Explore how to reshape data using <code>pivot_wider()</code> and <code>pivot_longer()</code> from <code>tidyr</code> package</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Additional Resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Additional Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For more information about the topics covered in this chapter, refer to the resources below:</p>
+<ul>
+<li>
+<a href="https://www.youtube.com/watch?v=k3SZ8keibuQ&amp;feature=youtu.be">Demonstrating pivoting (YouTube)</a> by Lisa Lendway</li>
+<li>
+<a href="https://tidyr.tidyverse.org/articles/pivot.html">Pivoting vignette (html)</a> by tidyr</li>
+<li>
+<a href="https://r4ds.hadley.nz/data-tidy.html#sec-pivoting">Pivoting (html)</a> by Wickham and Grolemund</li>
+<li>
+<a href="https://mdsr-book.github.io/mdsr2e/ch-dataII.html#reshaping-data">Reshaping data</a> by Baumer, Kaplan, and Horton</li>
+</ul>
+<section id="section" class="level2" data-number="18.1"><h2 data-number="18.1" class="anchored" data-anchor-id="section">
+<span class="header-section-number">18.1</span> </h2>
+</section>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">str</span>(exped_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>penguins <span class="sc">|&gt;</span> <span class="fu">count</span>(species, sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>spc_tbl_ [882 × 69] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ EXPID            : chr [1:882] "EVER20101" "EVER20102" "EVER20103" "AMAD20301" ...
- $ PEAKID           : chr [1:882] "EVER" "EVER" "EVER" "AMAD" ...
- $ YEAR             : num [1:882] 2020 2020 2020 2020 2020 2020 2020 2020 2020 2020 ...
- $ SEASON           : num [1:882] 1 1 1 3 3 3 3 3 3 3 ...
- $ SEASON_FACTOR    : chr [1:882] "Spring" "Spring" "Spring" "Autumn" ...
- $ HOST             : num [1:882] 2 2 2 1 1 1 1 1 1 1 ...
- $ HOST_FACTOR      : chr [1:882] "China" "China" "China" "Nepal" ...
- $ ROUTE1           : chr [1:882] "N Col-NE Ridge" "N Col-NE Ridge" "N Col-NE Ridge" "SW Ridge" ...
- $ ROUTE2           : chr [1:882] NA NA NA NA ...
- $ ROUTE3           : logi [1:882] NA NA NA NA NA NA ...
- $ ROUTE4           : logi [1:882] NA NA NA NA NA NA ...
- $ NATION           : chr [1:882] "China" "China" "China" "Nepal" ...
- $ LEADERS          : chr [1:882] "Tibetan Rope-Fixing" "Ci Luo (Tselo)" "Tsering Samdrup" "Chhang Dawa Sherpa" ...
- $ SPONSOR          : chr [1:882] "Tibetan Rope-Fixing Everest North 2020" "Chinese Mount Everest Survey Team" "Holy Mountain Adventure Everest Expedition 2020" "Seven Summit Treks Ama Dablam Expedition 2020" ...
- $ SUCCESS1         : logi [1:882] TRUE TRUE TRUE TRUE TRUE TRUE ...
- $ SUCCESS2         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SUCCESS3         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SUCCESS4         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ ASCENT1          : chr [1:882] NA NA NA NA ...
- $ ASCENT2          : chr [1:882] NA NA NA NA ...
- $ ASCENT3          : logi [1:882] NA NA NA NA NA NA ...
- $ ASCENT4          : logi [1:882] NA NA NA NA NA NA ...
- $ CLAIMED          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ DISPUTED         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ COUNTRIES        : chr [1:882] NA NA NA "Canada, Czech Republic, France, Poland, Russia, Switzerland, Ukraine, USA" ...
- $ APPROACH         : chr [1:882] "Lhasa-&gt;Tingri-&gt;Everest BC" NA "Lhasa-&gt;Tingri-&gt;Everest BC" NA ...
- $ BCDATE           : Date[1:882], format: NA NA ...
- $ SMTDATE          : Date[1:882], format: "2020-05-26" "2020-05-27" ...
- $ SMTTIME          : chr [1:882] "1515" "0945" "0545" "1300" ...
- $ SMTDAYS          : num [1:882] 0 0 35 1 9 16 11 3 0 10 ...
- $ TOTDAYS          : num [1:882] 0 0 38 0 11 17 13 4 0 0 ...
- $ TERMDATE         : Date[1:882], format: NA NA ...
- $ TERMREASON       : num [1:882] 1 1 1 1 1 1 4 1 12 1 ...
- $ TERMREASON_FACTOR: chr [1:882] "Success (main peak)" "Success (main peak)" "Success (main peak)" "Success (main peak)" ...
- $ TERMNOTE         : chr [1:882] NA NA NA NA ...
- $ HIGHPOINT        : num [1:882] 8849 8849 8849 6814 6814 ...
- $ TRAVERSE         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SKI              : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PARAPENTE        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ CAMPS            : num [1:882] 3 3 3 2 2 2 2 2 0 2 ...
- $ ROPE             : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ TOTMEMBERS       : num [1:882] 0 12 20 14 6 2 4 1 1 6 ...
- $ SMTMEMBERS       : num [1:882] 0 8 14 9 6 2 0 1 0 1 ...
- $ MDEATHS          : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ TOTHIRED         : num [1:882] 6 0 22 19 8 1 2 1 0 6 ...
- $ SMTHIRED         : num [1:882] 6 0 21 14 8 1 0 1 0 3 ...
- $ HDEATHS          : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ NOHIRED          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2USED           : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2NONE           : logi [1:882] FALSE FALSE FALSE TRUE TRUE TRUE ...
- $ O2CLIMB          : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2DESCENT        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2SLEEP          : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2MEDICAL        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2TAKEN          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2UNKWN          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ OTHERSMTS        : chr [1:882] NA NA NA NA ...
- $ CAMPSITES        : chr [1:882] "BC,ABC,C1,C2,C3,Smt(26/05)" "BC,ABC,C1,C2,C3,Smt(27/05)" "BC(23/04,5200m),IC(26/04,5800m),ABC(05/01,6500m),C1(25/05,7028m),C2(26/05,7790m),C3(27/05,8300m),Smt(28/05)" "BC(09/11,4450m),C1(5600m),C2(5900m),Smt(10,12-13,15/11)" ...
- $ ROUTEMEMO        : num [1:882] NA 221011 203869 NA 29755 ...
- $ ACCIDENTS        : chr [1:882] NA NA NA NA ...
- $ ACHIEVMENT       : chr [1:882] NA NA NA NA ...
- $ AGENCY           : chr [1:882] "Holy Mountain Adventure" NA "Holy Mountain Adventure" "Seven Summit Treks" ...
- $ COMRTE           : logi [1:882] TRUE TRUE TRUE TRUE TRUE TRUE ...
- $ STDRTE           : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ PRIMRTE          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMMEM          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMREF          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMID           : chr [1:882] NA NA NA NA ...
- $ CHKSUM           : num [1:882] 2465291 2465292 2465293 2463299 2463299 ...
- - attr(*, "spec")=
-  .. cols(
-  ..   EXPID = col_character(),
-  ..   PEAKID = col_character(),
-  ..   YEAR = col_double(),
-  ..   SEASON = col_double(),
-  ..   SEASON_FACTOR = col_character(),
-  ..   HOST = col_double(),
-  ..   HOST_FACTOR = col_character(),
-  ..   ROUTE1 = col_character(),
-  ..   ROUTE2 = col_character(),
-  ..   ROUTE3 = col_logical(),
-  ..   ROUTE4 = col_logical(),
-  ..   NATION = col_character(),
-  ..   LEADERS = col_character(),
-  ..   SPONSOR = col_character(),
-  ..   SUCCESS1 = col_logical(),
-  ..   SUCCESS2 = col_logical(),
-  ..   SUCCESS3 = col_logical(),
-  ..   SUCCESS4 = col_logical(),
-  ..   ASCENT1 = col_character(),
-  ..   ASCENT2 = col_character(),
-  ..   ASCENT3 = col_logical(),
-  ..   ASCENT4 = col_logical(),
-  ..   CLAIMED = col_logical(),
-  ..   DISPUTED = col_logical(),
-  ..   COUNTRIES = col_character(),
-  ..   APPROACH = col_character(),
-  ..   BCDATE = col_date(format = ""),
-  ..   SMTDATE = col_date(format = ""),
-  ..   SMTTIME = col_character(),
-  ..   SMTDAYS = col_double(),
-  ..   TOTDAYS = col_double(),
-  ..   TERMDATE = col_date(format = ""),
-  ..   TERMREASON = col_double(),
-  ..   TERMREASON_FACTOR = col_character(),
-  ..   TERMNOTE = col_character(),
-  ..   HIGHPOINT = col_double(),
-  ..   TRAVERSE = col_logical(),
-  ..   SKI = col_logical(),
-  ..   PARAPENTE = col_logical(),
-  ..   CAMPS = col_double(),
-  ..   ROPE = col_double(),
-  ..   TOTMEMBERS = col_double(),
-  ..   SMTMEMBERS = col_double(),
-  ..   MDEATHS = col_double(),
-  ..   TOTHIRED = col_double(),
-  ..   SMTHIRED = col_double(),
-  ..   HDEATHS = col_double(),
-  ..   NOHIRED = col_logical(),
-  ..   O2USED = col_logical(),
-  ..   O2NONE = col_logical(),
-  ..   O2CLIMB = col_logical(),
-  ..   O2DESCENT = col_logical(),
-  ..   O2SLEEP = col_logical(),
-  ..   O2MEDICAL = col_logical(),
-  ..   O2TAKEN = col_logical(),
-  ..   O2UNKWN = col_logical(),
-  ..   OTHERSMTS = col_character(),
-  ..   CAMPSITES = col_character(),
-  ..   ROUTEMEMO = col_double(),
-  ..   ACCIDENTS = col_character(),
-  ..   ACHIEVMENT = col_character(),
-  ..   AGENCY = col_character(),
-  ..   COMRTE = col_logical(),
-  ..   STDRTE = col_logical(),
-  ..   PRIMRTE = col_logical(),
-  ..   PRIMMEM = col_logical(),
-  ..   PRIMREF = col_logical(),
-  ..   PRIMID = col_character(),
-  ..   CHKSUM = col_double()
-  .. )
- - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+<pre><code># A tibble: 8 × 3
+  species   sex        n
+  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;
+1 Adelie    female    73
+2 Adelie    male      73
+3 Adelie    &lt;NA&gt;       6
+4 Chinstrap female    34
+5 Chinstrap male      34
+6 Gentoo    female    58
+7 Gentoo    male      61
+8 Gentoo    &lt;NA&gt;       5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+# Groups:   species [3]
+  species   sex    `n()`
+  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;
+1 Adelie    female    73
+2 Adelie    male      73
+3 Adelie    &lt;NA&gt;       6
+4 Chinstrap female    34
+5 Chinstrap male      34
+6 Gentoo    female    58
+7 Gentoo    male      61
+8 Gentoo    &lt;NA&gt;       5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">proportion =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+# Groups:   species [3]
+  species   sex        n proportion
+  &lt;chr&gt;     &lt;chr&gt;  &lt;int&gt;      &lt;dbl&gt;
+1 Adelie    female    73     0.480 
+2 Adelie    male      73     0.480 
+3 Adelie    &lt;NA&gt;       6     0.0395
+4 Chinstrap female    34     0.5   
+5 Chinstrap male      34     0.5   
+6 Gentoo    female    58     0.468 
+7 Gentoo    male      61     0.492 
+8 Gentoo    &lt;NA&gt;       5     0.0403</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co"># Units of observation = penguins</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;chr&gt;, year &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Units of observation = species/sex combos</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">head</span>(penguin_avg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>penguin_avg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   species [3]
+  species   female  male
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+1 Adelie     3369. 4043.
+2 Chinstrap  3527. 3939.
+3 Gentoo     4680. 5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb15-3"><a href="#cb15-3"></a></span>
+<span id="cb15-4"><a href="#cb15-4"></a>penguin_avg_wide</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+# Groups:   species [3]
+  species   female  male
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+1 Adelie     3369. 4043.
+2 Chinstrap  3527. 3939.
+3 Gentoo     4680. 5485.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Pivot longer again</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+# Groups:   species [3]
+  species   sex    avg_body_mass
+  &lt;chr&gt;     &lt;chr&gt;          &lt;dbl&gt;
+1 Adelie    female         3369.
+2 Adelie    male           4043.
+3 Chinstrap female         3527.
+4 Chinstrap male           3939.
+5 Gentoo    female         4680.
+6 Gentoo    male           5485.</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb19-2"><a href="#cb19-2"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb19-3"><a href="#cb19-3"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
+<span id="cb19-4"><a href="#cb19-4"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
+<span id="cb19-5"><a href="#cb19-5"></a>)</span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># Make wide</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>food <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  customer Shish   FrenchMeadow DunnBros
+  &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;   
+1 A        falafel salad        coffee  
+2 B        baklava pastry       tea     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb21-2"><a href="#cb21-2"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb21-3"><a href="#cb21-3"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
+<span id="cb21-4"><a href="#cb21-4"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
+<span id="cb21-5"><a href="#cb21-5"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
+<span id="cb21-6"><a href="#cb21-6"></a>)</span>
+<span id="cb21-7"><a href="#cb21-7"></a></span>
+<span id="cb21-8"><a href="#cb21-8"></a><span class="co"># Make long</span></span>
+<span id="cb21-9"><a href="#cb21-9"></a>more_food <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>customer, <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 3
+  customer restaurant   order   
+  &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   
+1 C        Shish        coffee  
+2 C        FrenchMeadow soup    
+3 C        DunnBros     cookie  
+4 D        Shish        maza    
+5 D        FrenchMeadow sandwich
+6 D        DunnBros     coffee  </code></pre>
 </div>
 </div>
 
@@ -1107,30 +1152,108 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../ica/ica-str.html" class="pagination-link" aria-label="ica-str">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">ica-str</span></span>
+      <a href="../ica/ica-dates.html" class="pagination-link" aria-label="Dates">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Dates</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../ica/ica-effective.html" class="pagination-link" aria-label="ica-effective">
-        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">ica-effective</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "ica-dataimp"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">---</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="in">```{r}</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>exped_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/exped_tidy.csv'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10"></a>peaks_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/peaks_tidy.csv'</span>)</span>
-<span id="cb7-11"><a href="#cb7-11"></a></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="in">```</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="in">```{r}</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="fu">str</span>(exped_tidy)</span>
-<span id="cb7-17"><a href="#cb7-17"></a></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="an">title:</span><span class="co"> "Reshaping"</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="co">  warning: false</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="an">fig-env:</span><span class="co"> 'figure'</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="an">fig-pos:</span><span class="co"> 'h'</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="an">fig-align:</span><span class="co"> center</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="an">code-fold:</span><span class="co"> false</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="co">---</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a></span>
+<span id="cb23-12"><a href="#cb23-12"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="ss">-   </span>Understand what it means to "reshape" data.</span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="ss">-   </span>Understand the difference between *wide* and *long* data formats.</span>
+<span id="cb23-15"><a href="#cb23-15"></a><span class="ss">-   </span>Be able to distinguish the units of observation for a given data set.</span>
+<span id="cb23-16"><a href="#cb23-16"></a><span class="ss">-   </span>Explore how to reshape data using <span class="in">`pivot_wider()`</span> and <span class="in">`pivot_longer()`</span> from <span class="in">`tidyr`</span> package</span>
+<span id="cb23-17"><a href="#cb23-17"></a>:::</span>
+<span id="cb23-18"><a href="#cb23-18"></a></span>
+<span id="cb23-19"><a href="#cb23-19"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb23-20"><a href="#cb23-20"></a>For more information about the topics covered in this chapter, refer to the resources below:</span>
+<span id="cb23-21"><a href="#cb23-21"></a></span>
+<span id="cb23-22"><a href="#cb23-22"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Demonstrating pivoting (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=k3SZ8keibuQ&amp;feature=youtu.be)</span> by Lisa Lendway</span>
+<span id="cb23-23"><a href="#cb23-23"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Pivoting vignette (html)</span><span class="co">](https://tidyr.tidyverse.org/articles/pivot.html)</span> by tidyr</span>
+<span id="cb23-24"><a href="#cb23-24"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Pivoting (html)</span><span class="co">](https://r4ds.hadley.nz/data-tidy.html#sec-pivoting)</span> by Wickham and Grolemund</span>
+<span id="cb23-25"><a href="#cb23-25"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Reshaping data</span><span class="co">](https://mdsr-book.github.io/mdsr2e/ch-dataII.html#reshaping-data)</span> by Baumer, Kaplan, and Horton</span>
+<span id="cb23-26"><a href="#cb23-26"></a></span>
+<span id="cb23-27"><a href="#cb23-27"></a><span class="fu">## </span></span>
+<span id="cb23-28"><a href="#cb23-28"></a>:::</span>
+<span id="cb23-29"><a href="#cb23-29"></a></span>
+<span id="cb23-32"><a href="#cb23-32"></a><span class="in">```{r}</span></span>
+<span id="cb23-33"><a href="#cb23-33"></a><span class="fu">library</span>(tidyverse) </span>
+<span id="cb23-34"><a href="#cb23-34"></a>penguins <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv'</span>)</span>
+<span id="cb23-35"><a href="#cb23-35"></a></span>
+<span id="cb23-36"><a href="#cb23-36"></a>penguins <span class="sc">|&gt;</span> <span class="fu">count</span>(species, sex)</span>
+<span id="cb23-37"><a href="#cb23-37"></a></span>
+<span id="cb23-38"><a href="#cb23-38"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="fu">n</span>())</span>
+<span id="cb23-39"><a href="#cb23-39"></a></span>
+<span id="cb23-40"><a href="#cb23-40"></a>penguins <span class="sc">|&gt;</span> <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> <span class="fu">summarize</span>(<span class="at">n =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">proportion =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n))</span>
+<span id="cb23-41"><a href="#cb23-41"></a><span class="in">```</span></span>
+<span id="cb23-42"><a href="#cb23-42"></a></span>
+<span id="cb23-45"><a href="#cb23-45"></a><span class="in">```{r}</span></span>
+<span id="cb23-46"><a href="#cb23-46"></a>penguin_avg <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb23-47"><a href="#cb23-47"></a>  <span class="fu">group_by</span>(species, sex) <span class="sc">|&gt;</span> </span>
+<span id="cb23-48"><a href="#cb23-48"></a>  <span class="fu">summarize</span>(<span class="at">avg_body_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb23-49"><a href="#cb23-49"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb23-50"><a href="#cb23-50"></a></span>
+<span id="cb23-51"><a href="#cb23-51"></a><span class="co"># Units of observation = penguins</span></span>
+<span id="cb23-52"><a href="#cb23-52"></a><span class="fu">head</span>(penguins)</span>
+<span id="cb23-53"><a href="#cb23-53"></a></span>
+<span id="cb23-54"><a href="#cb23-54"></a><span class="co"># Units of observation = species/sex combos</span></span>
+<span id="cb23-55"><a href="#cb23-55"></a><span class="fu">head</span>(penguin_avg)</span>
+<span id="cb23-56"><a href="#cb23-56"></a>penguin_avg</span>
+<span id="cb23-57"><a href="#cb23-57"></a></span>
+<span id="cb23-58"><a href="#cb23-58"></a></span>
+<span id="cb23-59"><a href="#cb23-59"></a><span class="in">```</span></span>
+<span id="cb23-60"><a href="#cb23-60"></a></span>
+<span id="cb23-63"><a href="#cb23-63"></a><span class="in">```{r}</span></span>
+<span id="cb23-64"><a href="#cb23-64"></a>penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb23-65"><a href="#cb23-65"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb23-66"><a href="#cb23-66"></a></span>
+<span id="cb23-67"><a href="#cb23-67"></a><span class="in">```</span></span>
+<span id="cb23-68"><a href="#cb23-68"></a></span>
+<span id="cb23-71"><a href="#cb23-71"></a><span class="in">```{r}</span></span>
+<span id="cb23-72"><a href="#cb23-72"></a>penguin_avg_wide <span class="ot">&lt;-</span> penguin_avg <span class="sc">|&gt;</span> </span>
+<span id="cb23-73"><a href="#cb23-73"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> sex, <span class="at">values_from =</span> avg_body_mass)</span>
+<span id="cb23-74"><a href="#cb23-74"></a></span>
+<span id="cb23-75"><a href="#cb23-75"></a>penguin_avg_wide</span>
+<span id="cb23-76"><a href="#cb23-76"></a></span>
+<span id="cb23-77"><a href="#cb23-77"></a><span class="co"># Pivot longer again</span></span>
+<span id="cb23-78"><a href="#cb23-78"></a>penguin_avg_wide <span class="sc">|&gt;</span> </span>
+<span id="cb23-79"><a href="#cb23-79"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female, male), <span class="at">names_to =</span> <span class="st">"sex"</span>, <span class="at">values_to =</span> <span class="st">"avg_body_mass"</span>)</span>
+<span id="cb23-80"><a href="#cb23-80"></a></span>
+<span id="cb23-81"><a href="#cb23-81"></a><span class="in">```</span></span>
+<span id="cb23-82"><a href="#cb23-82"></a></span>
+<span id="cb23-85"><a href="#cb23-85"></a><span class="in">```{r}</span></span>
+<span id="cb23-86"><a href="#cb23-86"></a>food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-87"><a href="#cb23-87"></a>  <span class="at">customer =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb23-88"><a href="#cb23-88"></a>  <span class="at">restaurant =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Shish"</span>, <span class="st">"FrenchMeadow"</span>, <span class="st">"DunnBros"</span>), <span class="dv">2</span>),</span>
+<span id="cb23-89"><a href="#cb23-89"></a>  <span class="at">order =</span> <span class="fu">c</span>(<span class="st">"falafel"</span>, <span class="st">"salad"</span>, <span class="st">"coffee"</span>, <span class="st">"baklava"</span>, <span class="st">"pastry"</span>, <span class="st">"tea"</span>)</span>
+<span id="cb23-90"><a href="#cb23-90"></a>)</span>
+<span id="cb23-91"><a href="#cb23-91"></a></span>
+<span id="cb23-92"><a href="#cb23-92"></a><span class="co"># Make wide</span></span>
+<span id="cb23-93"><a href="#cb23-93"></a>food <span class="sc">|&gt;</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> restaurant, <span class="at">values_from =</span> order)</span>
+<span id="cb23-94"><a href="#cb23-94"></a></span>
+<span id="cb23-95"><a href="#cb23-95"></a>more_food <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-96"><a href="#cb23-96"></a>  <span class="at">customer =</span> <span class="fu">c</span>(<span class="st">"C"</span>, <span class="st">"D"</span>),</span>
+<span id="cb23-97"><a href="#cb23-97"></a>  <span class="at">Shish =</span> <span class="fu">c</span>(<span class="st">"coffee"</span>, <span class="st">"maza"</span>),</span>
+<span id="cb23-98"><a href="#cb23-98"></a>  <span class="at">FrenchMeadow =</span> <span class="fu">c</span>(<span class="st">"soup"</span>, <span class="st">"sandwich"</span>),</span>
+<span id="cb23-99"><a href="#cb23-99"></a>  <span class="at">DunnBros =</span> <span class="fu">c</span>(<span class="st">"cookie"</span>, <span class="st">"coffee"</span>)</span>
+<span id="cb23-100"><a href="#cb23-100"></a>)</span>
+<span id="cb23-101"><a href="#cb23-101"></a></span>
+<span id="cb23-102"><a href="#cb23-102"></a><span class="co"># Make long</span></span>
+<span id="cb23-103"><a href="#cb23-103"></a>more_food <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>customer, <span class="at">names_to =</span> <span class="st">"restaurant"</span>, <span class="at">values_to =</span> <span class="st">"order"</span>)</span>
+<span id="cb23-104"><a href="#cb23-104"></a></span>
+<span id="cb23-105"><a href="#cb23-105"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
