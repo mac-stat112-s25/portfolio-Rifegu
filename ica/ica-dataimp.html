@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.5.57">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>15&nbsp; ica-dataimp – COMP/STAT112 Notebook</title>
+<title>Data Import – COMP/STAT112 Notebook</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Import</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-dataimp.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Import</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -296,10 +296,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span></a></li></ol></nav><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">15</span>&nbsp; <span class="chapter-title">ica-dataimp</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ica/quarto-demo.html">In-class Activities</a></li><li class="breadcrumb-item"><a href="../ica/ica-dataimp.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Import</span></a></li></ol></nav><div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Data Import</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -313,179 +311,320 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>exped_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/exped_tidy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 882 Columns: 69
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr  (22): EXPID, PEAKID, SEASON_FACTOR, HOST_FACTOR, ROUTE1, ROUTE2, NATION...
-dbl  (17): YEAR, SEASON, HOST, SMTDAYS, TOTDAYS, TERMREASON, HIGHPOINT, CAMP...
-lgl  (27): ROUTE3, ROUTE4, SUCCESS1, SUCCESS2, SUCCESS3, SUCCESS4, ASCENT3, ...
-date  (3): BCDATE, SMTDATE, TERMDATE
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</header><div class="callout callout-style-default callout-caution callout-titled" title="Learning Goals">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>peaks_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/peaks_tidy.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 480 Columns: 29
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (14): PEAKID, PKNAME, PKNAME2, LOCATION, HIMAL_FACTOR, REGION_FACTOR, RE...
-dbl (12): HEIGHTM, HEIGHTF, HIMAL, REGION, TREKYEAR, PHOST, PSTATUS, PEAKMEM...
-lgl  (3): OPEN, UNLISTED, TREKKING
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="callout-title-container flex-fill">
+Learning Goals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Get a glimpse into how to… - find existing data sets - save data sets locally - load data into RStudio - do preliminary data checking and cleaning: - format variables properly - deal with missing values NOTE: Best learned through practice.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Additional Resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Additional Resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GtCsjtZBNp4">Import wizard demo (YouTube)</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/main/data-import.pdf">Data Import Cheat Sheet (pdf)</a></li>
+<li><a href="https://readr.tidyverse.org/"><code>readr</code> documentation</a></li>
+<li><a href="https://r4ds.hadley.nz/data-import.html">Data Import (r4ds)</a></li>
+<li><a href="https://r4ds.hadley.nz/missing-values.html">Missing data (r4ds)</a></li>
+<li><a href="https://mdsr-book.github.io/mdsr2e/ch-dataII.html#data-intake">Data intake (MDSR)</a></li>
+</ul>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">str</span>(exped_tidy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="co"># Import the messy IMDB dataset from Downloads</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>imdb_messy <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/Desktop/imdb_5000_messy.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">str</span>(imdb_messy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>spc_tbl_ [882 × 69] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
- $ EXPID            : chr [1:882] "EVER20101" "EVER20102" "EVER20103" "AMAD20301" ...
- $ PEAKID           : chr [1:882] "EVER" "EVER" "EVER" "AMAD" ...
- $ YEAR             : num [1:882] 2020 2020 2020 2020 2020 2020 2020 2020 2020 2020 ...
- $ SEASON           : num [1:882] 1 1 1 3 3 3 3 3 3 3 ...
- $ SEASON_FACTOR    : chr [1:882] "Spring" "Spring" "Spring" "Autumn" ...
- $ HOST             : num [1:882] 2 2 2 1 1 1 1 1 1 1 ...
- $ HOST_FACTOR      : chr [1:882] "China" "China" "China" "Nepal" ...
- $ ROUTE1           : chr [1:882] "N Col-NE Ridge" "N Col-NE Ridge" "N Col-NE Ridge" "SW Ridge" ...
- $ ROUTE2           : chr [1:882] NA NA NA NA ...
- $ ROUTE3           : logi [1:882] NA NA NA NA NA NA ...
- $ ROUTE4           : logi [1:882] NA NA NA NA NA NA ...
- $ NATION           : chr [1:882] "China" "China" "China" "Nepal" ...
- $ LEADERS          : chr [1:882] "Tibetan Rope-Fixing" "Ci Luo (Tselo)" "Tsering Samdrup" "Chhang Dawa Sherpa" ...
- $ SPONSOR          : chr [1:882] "Tibetan Rope-Fixing Everest North 2020" "Chinese Mount Everest Survey Team" "Holy Mountain Adventure Everest Expedition 2020" "Seven Summit Treks Ama Dablam Expedition 2020" ...
- $ SUCCESS1         : logi [1:882] TRUE TRUE TRUE TRUE TRUE TRUE ...
- $ SUCCESS2         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SUCCESS3         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SUCCESS4         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ ASCENT1          : chr [1:882] NA NA NA NA ...
- $ ASCENT2          : chr [1:882] NA NA NA NA ...
- $ ASCENT3          : logi [1:882] NA NA NA NA NA NA ...
- $ ASCENT4          : logi [1:882] NA NA NA NA NA NA ...
- $ CLAIMED          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ DISPUTED         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ COUNTRIES        : chr [1:882] NA NA NA "Canada, Czech Republic, France, Poland, Russia, Switzerland, Ukraine, USA" ...
- $ APPROACH         : chr [1:882] "Lhasa-&gt;Tingri-&gt;Everest BC" NA "Lhasa-&gt;Tingri-&gt;Everest BC" NA ...
- $ BCDATE           : Date[1:882], format: NA NA ...
- $ SMTDATE          : Date[1:882], format: "2020-05-26" "2020-05-27" ...
- $ SMTTIME          : chr [1:882] "1515" "0945" "0545" "1300" ...
- $ SMTDAYS          : num [1:882] 0 0 35 1 9 16 11 3 0 10 ...
- $ TOTDAYS          : num [1:882] 0 0 38 0 11 17 13 4 0 0 ...
- $ TERMDATE         : Date[1:882], format: NA NA ...
- $ TERMREASON       : num [1:882] 1 1 1 1 1 1 4 1 12 1 ...
- $ TERMREASON_FACTOR: chr [1:882] "Success (main peak)" "Success (main peak)" "Success (main peak)" "Success (main peak)" ...
- $ TERMNOTE         : chr [1:882] NA NA NA NA ...
- $ HIGHPOINT        : num [1:882] 8849 8849 8849 6814 6814 ...
- $ TRAVERSE         : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ SKI              : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PARAPENTE        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ CAMPS            : num [1:882] 3 3 3 2 2 2 2 2 0 2 ...
- $ ROPE             : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ TOTMEMBERS       : num [1:882] 0 12 20 14 6 2 4 1 1 6 ...
- $ SMTMEMBERS       : num [1:882] 0 8 14 9 6 2 0 1 0 1 ...
- $ MDEATHS          : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ TOTHIRED         : num [1:882] 6 0 22 19 8 1 2 1 0 6 ...
- $ SMTHIRED         : num [1:882] 6 0 21 14 8 1 0 1 0 3 ...
- $ HDEATHS          : num [1:882] 0 0 0 0 0 0 0 0 0 0 ...
- $ NOHIRED          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2USED           : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2NONE           : logi [1:882] FALSE FALSE FALSE TRUE TRUE TRUE ...
- $ O2CLIMB          : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2DESCENT        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2SLEEP          : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ O2MEDICAL        : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2TAKEN          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ O2UNKWN          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ OTHERSMTS        : chr [1:882] NA NA NA NA ...
- $ CAMPSITES        : chr [1:882] "BC,ABC,C1,C2,C3,Smt(26/05)" "BC,ABC,C1,C2,C3,Smt(27/05)" "BC(23/04,5200m),IC(26/04,5800m),ABC(05/01,6500m),C1(25/05,7028m),C2(26/05,7790m),C3(27/05,8300m),Smt(28/05)" "BC(09/11,4450m),C1(5600m),C2(5900m),Smt(10,12-13,15/11)" ...
- $ ROUTEMEMO        : num [1:882] NA 221011 203869 NA 29755 ...
- $ ACCIDENTS        : chr [1:882] NA NA NA NA ...
- $ ACHIEVMENT       : chr [1:882] NA NA NA NA ...
- $ AGENCY           : chr [1:882] "Holy Mountain Adventure" NA "Holy Mountain Adventure" "Seven Summit Treks" ...
- $ COMRTE           : logi [1:882] TRUE TRUE TRUE TRUE TRUE TRUE ...
- $ STDRTE           : logi [1:882] TRUE TRUE TRUE FALSE FALSE FALSE ...
- $ PRIMRTE          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMMEM          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMREF          : logi [1:882] FALSE FALSE FALSE FALSE FALSE FALSE ...
- $ PRIMID           : chr [1:882] NA NA NA NA ...
- $ CHKSUM           : num [1:882] 2465291 2465292 2465293 2463299 2463299 ...
+<pre><code>spc_tbl_ [5,043 × 29] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ ...1                     : num [1:5043] 1 2 3 4 5 6 7 8 9 10 ...
+ $ color                    : chr [1:5043] "Color" "Color" "Color" "Color" ...
+ $ director_name            : chr [1:5043] "James Cameron" "Gore Verbinski" "Sam Mendes" "Christopher Nolan" ...
+ $ num_critic_for_reviews   : num [1:5043] 723 302 602 813 NA 462 392 324 635 375 ...
+ $ duration                 : num [1:5043] 178 169 148 164 NA 132 156 100 141 153 ...
+ $ director_facebook_likes  : num [1:5043] 0 563 0 22000 131 475 0 15 0 282 ...
+ $ actor_3_facebook_likes   : num [1:5043] 855 1000 161 23000 NA 530 4000 284 19000 10000 ...
+ $ actor_2_name             : chr [1:5043] "Joel David Moore" "Orlando Bloom" "Rory Kinnear" "Christian Bale" ...
+ $ actor_1_facebook_likes   : num [1:5043] 1000 40000 11000 27000 131 640 24000 799 26000 25000 ...
+ $ gross                    : num [1:5043] 7.61e+08 3.09e+08 2.00e+08 4.48e+08 NA ...
+ $ genres                   : chr [1:5043] "Action|Adventure|Fantasy|Sci-Fi" "Action|Adventure|Fantasy" "Action|Adventure|Thriller" "Action|Thriller" ...
+ $ actor_1_name             : chr [1:5043] "CCH Pounder" "Johnny Depp" "Christoph Waltz" "Tom Hardy" ...
+ $ movie_title              : chr [1:5043] "Avatar&nbsp;" "Pirates of the Caribbean: At World's End&nbsp;" "Spectre&nbsp;" "The Dark Knight Rises&nbsp;" ...
+ $ num_voted_users          : num [1:5043] 886204 471220 275868 1144337 8 ...
+ $ cast_total_facebook_likes: num [1:5043] 4834 48350 11700 106759 143 ...
+ $ actor_3_name             : chr [1:5043] "Wes Studi" "Jack Davenport" "Stephanie Sigman" "Joseph Gordon-Levitt" ...
+ $ facenumber_in_poster     : num [1:5043] 0 0 1 0 0 1 0 1 4 3 ...
+ $ plot_keywords            : chr [1:5043] "avatar|future|marine|native|paraplegic" "goddess|marriage ceremony|marriage proposal|pirate|singapore" "bomb|espionage|sequel|spy|terrorist" "deception|imprisonment|lawlessness|police officer|terrorist plot" ...
+ $ movie_imdb_link          : chr [1:5043] "http://www.imdb.com/title/tt0499549/?ref_=fn_tt_tt_1" "http://www.imdb.com/title/tt0449088/?ref_=fn_tt_tt_1" "http://www.imdb.com/title/tt2379713/?ref_=fn_tt_tt_1" "http://www.imdb.com/title/tt1345836/?ref_=fn_tt_tt_1" ...
+ $ num_user_for_reviews     : num [1:5043] 3054 1238 994 2701 NA ...
+ $ language                 : chr [1:5043] "English" "English" "English" "English" ...
+ $ country                  : chr [1:5043] "USA" "USA" "UK" "USA" ...
+ $ content_rating           : chr [1:5043] "PG-13" "PG-13" "PG-13" "PG-13" ...
+ $ budget                   : num [1:5043] 2.37e+08 3.00e+08 2.45e+08 2.50e+08 NA ...
+ $ title_year               : num [1:5043] 2009 2007 2015 2012 NA ...
+ $ actor_2_facebook_likes   : num [1:5043] 936 5000 393 23000 12 632 11000 553 21000 11000 ...
+ $ imdb_score               : num [1:5043] 7.9 7.1 6.8 8.5 7.1 6.6 6.2 7.8 7.5 7.5 ...
+ $ aspect_ratio             : num [1:5043] 1.78 2.35 2.35 2.35 NA 2.35 2.35 1.85 2.35 2.35 ...
+ $ movie_facebook_likes     : num [1:5043] 33000 0 85000 164000 0 24000 0 29000 118000 10000 ...
  - attr(*, "spec")=
   .. cols(
-  ..   EXPID = col_character(),
-  ..   PEAKID = col_character(),
-  ..   YEAR = col_double(),
-  ..   SEASON = col_double(),
-  ..   SEASON_FACTOR = col_character(),
-  ..   HOST = col_double(),
-  ..   HOST_FACTOR = col_character(),
-  ..   ROUTE1 = col_character(),
-  ..   ROUTE2 = col_character(),
-  ..   ROUTE3 = col_logical(),
-  ..   ROUTE4 = col_logical(),
-  ..   NATION = col_character(),
-  ..   LEADERS = col_character(),
-  ..   SPONSOR = col_character(),
-  ..   SUCCESS1 = col_logical(),
-  ..   SUCCESS2 = col_logical(),
-  ..   SUCCESS3 = col_logical(),
-  ..   SUCCESS4 = col_logical(),
-  ..   ASCENT1 = col_character(),
-  ..   ASCENT2 = col_character(),
-  ..   ASCENT3 = col_logical(),
-  ..   ASCENT4 = col_logical(),
-  ..   CLAIMED = col_logical(),
-  ..   DISPUTED = col_logical(),
-  ..   COUNTRIES = col_character(),
-  ..   APPROACH = col_character(),
-  ..   BCDATE = col_date(format = ""),
-  ..   SMTDATE = col_date(format = ""),
-  ..   SMTTIME = col_character(),
-  ..   SMTDAYS = col_double(),
-  ..   TOTDAYS = col_double(),
-  ..   TERMDATE = col_date(format = ""),
-  ..   TERMREASON = col_double(),
-  ..   TERMREASON_FACTOR = col_character(),
-  ..   TERMNOTE = col_character(),
-  ..   HIGHPOINT = col_double(),
-  ..   TRAVERSE = col_logical(),
-  ..   SKI = col_logical(),
-  ..   PARAPENTE = col_logical(),
-  ..   CAMPS = col_double(),
-  ..   ROPE = col_double(),
-  ..   TOTMEMBERS = col_double(),
-  ..   SMTMEMBERS = col_double(),
-  ..   MDEATHS = col_double(),
-  ..   TOTHIRED = col_double(),
-  ..   SMTHIRED = col_double(),
-  ..   HDEATHS = col_double(),
-  ..   NOHIRED = col_logical(),
-  ..   O2USED = col_logical(),
-  ..   O2NONE = col_logical(),
-  ..   O2CLIMB = col_logical(),
-  ..   O2DESCENT = col_logical(),
-  ..   O2SLEEP = col_logical(),
-  ..   O2MEDICAL = col_logical(),
-  ..   O2TAKEN = col_logical(),
-  ..   O2UNKWN = col_logical(),
-  ..   OTHERSMTS = col_character(),
-  ..   CAMPSITES = col_character(),
-  ..   ROUTEMEMO = col_double(),
-  ..   ACCIDENTS = col_character(),
-  ..   ACHIEVMENT = col_character(),
-  ..   AGENCY = col_character(),
-  ..   COMRTE = col_logical(),
-  ..   STDRTE = col_logical(),
-  ..   PRIMRTE = col_logical(),
-  ..   PRIMMEM = col_logical(),
-  ..   PRIMREF = col_logical(),
-  ..   PRIMID = col_character(),
-  ..   CHKSUM = col_double()
+  ..   ...1 = col_double(),
+  ..   color = col_character(),
+  ..   director_name = col_character(),
+  ..   num_critic_for_reviews = col_double(),
+  ..   duration = col_double(),
+  ..   director_facebook_likes = col_double(),
+  ..   actor_3_facebook_likes = col_double(),
+  ..   actor_2_name = col_character(),
+  ..   actor_1_facebook_likes = col_double(),
+  ..   gross = col_double(),
+  ..   genres = col_character(),
+  ..   actor_1_name = col_character(),
+  ..   movie_title = col_character(),
+  ..   num_voted_users = col_double(),
+  ..   cast_total_facebook_likes = col_double(),
+  ..   actor_3_name = col_character(),
+  ..   facenumber_in_poster = col_double(),
+  ..   plot_keywords = col_character(),
+  ..   movie_imdb_link = col_character(),
+  ..   num_user_for_reviews = col_double(),
+  ..   language = col_character(),
+  ..   country = col_character(),
+  ..   content_rating = col_character(),
+  ..   budget = col_double(),
+  ..   title_year = col_double(),
+  ..   actor_2_facebook_likes = col_double(),
+  ..   imdb_score = col_double(),
+  ..   aspect_ratio = col_double(),
+  ..   movie_facebook_likes = col_double()
   .. )
  - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">head</span>(imdb_messy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 29
+   ...1 color director_name     num_critic_for_reviews duration
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;                              &lt;dbl&gt;    &lt;dbl&gt;
+1     1 Color James Cameron                        723      178
+2     2 Color Gore Verbinski                       302      169
+3     3 Color Sam Mendes                           602      148
+4     4 Color Christopher Nolan                    813      164
+5     5 &lt;NA&gt;  Doug Walker                           NA       NA
+6     6 Color Andrew Stanton                       462      132
+# ℹ 24 more variables: director_facebook_likes &lt;dbl&gt;,
+#   actor_3_facebook_likes &lt;dbl&gt;, actor_2_name &lt;chr&gt;,
+#   actor_1_facebook_likes &lt;dbl&gt;, gross &lt;dbl&gt;, genres &lt;chr&gt;,
+#   actor_1_name &lt;chr&gt;, movie_title &lt;chr&gt;, num_voted_users &lt;dbl&gt;,
+#   cast_total_facebook_likes &lt;dbl&gt;, actor_3_name &lt;chr&gt;,
+#   facenumber_in_poster &lt;dbl&gt;, plot_keywords &lt;chr&gt;, movie_imdb_link &lt;chr&gt;,
+#   num_user_for_reviews &lt;dbl&gt;, language &lt;chr&gt;, country &lt;chr&gt;, …</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Summarize data</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>imdb_messy <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), as.factor)) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      ...1                  color               director_name 
+ Min.   :   1   B&amp;W            :  10   Steven Spielberg:  26  
+ 1st Qu.:1262   Black and White: 199   Woody Allen     :  22  
+ Median :2522   color          :  30   Clint Eastwood  :  20  
+ Mean   :2522   Color          :4755   Martin Scorsese :  20  
+ 3rd Qu.:3782   COLOR          :  30   Ridley Scott    :  17  
+ Max.   :5043   NA's           :  19   (Other)         :4834  
+                                       NA's            : 104  
+ num_critic_for_reviews    duration     director_facebook_likes
+ Min.   :  1.0          Min.   :  7.0   Min.   :    0.0        
+ 1st Qu.: 50.0          1st Qu.: 93.0   1st Qu.:    7.0        
+ Median :110.0          Median :103.0   Median :   49.0        
+ Mean   :140.2          Mean   :107.2   Mean   :  686.5        
+ 3rd Qu.:195.0          3rd Qu.:118.0   3rd Qu.:  194.5        
+ Max.   :813.0          Max.   :511.0   Max.   :23000.0        
+ NA's   :50             NA's   :15      NA's   :104            
+ actor_3_facebook_likes          actor_2_name  actor_1_facebook_likes
+ Min.   :    0.0        Morgan Freeman :  20   Min.   :     0        
+ 1st Qu.:  133.0        Charlize Theron:  15   1st Qu.:   614        
+ Median :  371.5        Brad Pitt      :  14   Median :   988        
+ Mean   :  645.0        James Franco   :  11   Mean   :  6560        
+ 3rd Qu.:  636.0        Meryl Streep   :  11   3rd Qu.: 11000        
+ Max.   :23000.0        (Other)        :4959   Max.   :640000        
+ NA's   :23             NA's           :  13   NA's   :7             
+     gross                            genres             actor_1_name 
+ Min.   :      162   Drama               : 236   Robert De Niro:  49  
+ 1st Qu.:  5340988   Comedy              : 209   Johnny Depp   :  41  
+ Median : 25517500   Comedy|Drama        : 191   Nicolas Cage  :  33  
+ Mean   : 48468408   Comedy|Drama|Romance: 187   J.K. Simmons  :  31  
+ 3rd Qu.: 62309438   Comedy|Romance      : 158   Bruce Willis  :  30  
+ Max.   :760505847   Drama|Romance       : 152   (Other)       :4852  
+ NA's   :884         (Other)             :3910   NA's          :   7  
+                    movie_title   num_voted_users   cast_total_facebook_likes
+ Ben-Hur&nbsp;                 :   3   Min.   :      5   Min.   :     0           
+ Halloween&nbsp;               :   3   1st Qu.:   8594   1st Qu.:  1411           
+ Home&nbsp;                    :   3   Median :  34359   Median :  3090           
+ King Kong&nbsp;               :   3   Mean   :  83668   Mean   :  9699           
+ Pan&nbsp;                     :   3   3rd Qu.:  96309   3rd Qu.: 13756           
+ The Fast and the Furious&nbsp;:   3   Max.   :1689764   Max.   :656730           
+ (Other)                  :5025                                              
+         actor_3_name  facenumber_in_poster
+ Ben Mendelsohn:   8   Min.   : 0.000      
+ John Heard    :   8   1st Qu.: 0.000      
+ Steve Coogan  :   8   Median : 1.000      
+ Anne Hathaway :   7   Mean   : 1.371      
+ Jon Gries     :   7   3rd Qu.: 2.000      
+ (Other)       :4982   Max.   :43.000      
+ NA's          :  23   NA's   :13          
+                                                                           plot_keywords 
+ based on novel                                                                   :   4  
+ 1940s|child hero|fantasy world|orphan|reference to peter pan                     :   3  
+ alien friendship|alien invasion|australia|flying car|mother daughter relationship:   3  
+ animal name in title|ape abducts a woman|gorilla|island|king kong                :   3  
+ assistant|experiment|frankenstein|medical student|scientist                      :   3  
+ (Other)                                                                          :4874  
+ NA's                                                                             : 153  
+                                             movie_imdb_link
+ http://www.imdb.com/title/tt0077651/?ref_=fn_tt_tt_1:   3  
+ http://www.imdb.com/title/tt0232500/?ref_=fn_tt_tt_1:   3  
+ http://www.imdb.com/title/tt0360717/?ref_=fn_tt_tt_1:   3  
+ http://www.imdb.com/title/tt1976009/?ref_=fn_tt_tt_1:   3  
+ http://www.imdb.com/title/tt2224026/?ref_=fn_tt_tt_1:   3  
+ http://www.imdb.com/title/tt2638144/?ref_=fn_tt_tt_1:   3  
+ (Other)                                             :5025  
+ num_user_for_reviews     language       country       content_rating
+ Min.   :   1.0       English :4704   USA    :3807   R        :2118  
+ 1st Qu.:  65.0       French  :  73   UK     : 448   PG-13    :1461  
+ Median : 156.0       Spanish :  40   France : 154   PG       : 701  
+ Mean   : 272.8       Hindi   :  28   Canada : 126   Not Rated: 116  
+ 3rd Qu.: 326.0       Mandarin:  26   Germany:  97   G        : 112  
+ Max.   :5060.0       (Other) : 160   (Other): 406   (Other)  : 232  
+ NA's   :21           NA's    :  12   NA's   :   5   NA's     : 303  
+     budget            title_year   actor_2_facebook_likes   imdb_score   
+ Min.   :2.180e+02   Min.   :1916   Min.   :     0         Min.   :1.600  
+ 1st Qu.:6.000e+06   1st Qu.:1999   1st Qu.:   281         1st Qu.:5.800  
+ Median :2.000e+07   Median :2005   Median :   595         Median :6.600  
+ Mean   :3.975e+07   Mean   :2002   Mean   :  1652         Mean   :6.442  
+ 3rd Qu.:4.500e+07   3rd Qu.:2011   3rd Qu.:   918         3rd Qu.:7.200  
+ Max.   :1.222e+10   Max.   :2016   Max.   :137000         Max.   :9.500  
+ NA's   :492         NA's   :108    NA's   :13                            
+  aspect_ratio   movie_facebook_likes
+ Min.   : 1.18   Min.   :     0      
+ 1st Qu.: 1.85   1st Qu.:     0      
+ Median : 2.35   Median :   166      
+ Mean   : 2.22   Mean   :  7526      
+ 3rd Qu.: 2.35   3rd Qu.:  3000      
+ Max.   :16.00   Max.   :349000      
+ NA's   :329                         </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># See how color variable looks</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>imdb_messy <span class="sc">|&gt;</span> <span class="fu">count</span>(color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  color               n
+  &lt;chr&gt;           &lt;int&gt;
+1 B&amp;W                10
+2 Black and White   199
+3 COLOR              30
+4 Color            4755
+5 color              30
+6 &lt;NA&gt;               19</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># Clean it using fct_recode()</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>imdb_clean <span class="ot">&lt;-</span> imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">mutate</span>(<span class="at">color =</span> <span class="fu">fct_recode</span>(color,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>                            <span class="st">"Color"</span> <span class="ot">=</span> <span class="st">"COLOR"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>                            <span class="st">"Color"</span> <span class="ot">=</span> <span class="st">"color"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6"></a>                            <span class="st">"Black_White"</span> <span class="ot">=</span> <span class="st">"B&amp;W"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7"></a>                            <span class="st">"Black_White"</span> <span class="ot">=</span> <span class="st">"Black and White"</span>))</span>
+<span id="cb9-8"><a href="#cb9-8"></a></span>
+<span id="cb9-9"><a href="#cb9-9"></a><span class="co"># Double-check cleaned values</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>imdb_clean <span class="sc">|&gt;</span> <span class="fu">count</span>(color)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  color           n
+  &lt;fct&gt;       &lt;int&gt;
+1 Black_White   209
+2 Color        4815
+3 &lt;NA&gt;           19</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># How many missing values per column?</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(imdb_messy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     ...1                     color             director_name 
+                        0                        19                       104 
+   num_critic_for_reviews                  duration   director_facebook_likes 
+                       50                        15                       104 
+   actor_3_facebook_likes              actor_2_name    actor_1_facebook_likes 
+                       23                        13                         7 
+                    gross                    genres              actor_1_name 
+                      884                         0                         7 
+              movie_title           num_voted_users cast_total_facebook_likes 
+                        0                         0                         0 
+             actor_3_name      facenumber_in_poster             plot_keywords 
+                       23                        13                       153 
+          movie_imdb_link      num_user_for_reviews                  language 
+                        0                        21                        12 
+                  country            content_rating                    budget 
+                        5                       303                       492 
+               title_year    actor_2_facebook_likes                imdb_score 
+                      108                        13                         0 
+             aspect_ratio      movie_facebook_likes 
+                      329                         0 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Look at movies missing actor 1 facebook likes</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb13-3"><a href="#cb13-3"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(actor_1_facebook_likes))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 29
+   ...1 color director_name     num_critic_for_reviews duration
+  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;                              &lt;dbl&gt;    &lt;dbl&gt;
+1  4503 Color Léa Pool                              23       97
+2  4520 Color Harry Gantz                           12      105
+3  4721 Color U. Roberto Romano                      3       80
+4  4838 Color Pan Nalin                             15      102
+5  4946 Color Amal Al-Agroobi                       NA       62
+6  4947 Color Andrew Berends                        12       90
+7  4991 Color Jem Cohen                             12      111
+# ℹ 24 more variables: director_facebook_likes &lt;dbl&gt;,
+#   actor_3_facebook_likes &lt;dbl&gt;, actor_2_name &lt;chr&gt;,
+#   actor_1_facebook_likes &lt;dbl&gt;, gross &lt;dbl&gt;, genres &lt;chr&gt;,
+#   actor_1_name &lt;chr&gt;, movie_title &lt;chr&gt;, num_voted_users &lt;dbl&gt;,
+#   cast_total_facebook_likes &lt;dbl&gt;, actor_3_name &lt;chr&gt;,
+#   facenumber_in_poster &lt;dbl&gt;, plot_keywords &lt;chr&gt;, movie_imdb_link &lt;chr&gt;,
+#   num_user_for_reviews &lt;dbl&gt;, language &lt;chr&gt;, country &lt;chr&gt;, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Drop movies missing duration or color</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>imdb_no_missing <span class="ot">&lt;-</span> imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(duration), <span class="sc">!</span><span class="fu">is.na</span>(color))</span>
+<span id="cb15-4"><a href="#cb15-4"></a></span>
+<span id="cb15-5"><a href="#cb15-5"></a><span class="co"># Plot to check</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="fu">ggplot</span>(imdb_no_missing, <span class="fu">aes</span>(<span class="at">x =</span> duration, <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>  <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="ica-dataimp_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -1123,20 +1262,99 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "ica-dataimp"</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="co">---</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="in">```{r}</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>exped_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/exped_tidy.csv'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10"></a>peaks_tidy <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-01-21/peaks_tidy.csv'</span>)</span>
-<span id="cb7-11"><a href="#cb7-11"></a></span>
-<span id="cb7-12"><a href="#cb7-12"></a><span class="in">```</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="in">```{r}</span></span>
-<span id="cb7-16"><a href="#cb7-16"></a><span class="fu">str</span>(exped_tidy)</span>
-<span id="cb7-17"><a href="#cb7-17"></a></span>
-<span id="cb7-18"><a href="#cb7-18"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">---</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="an">title:</span><span class="co"> "ica-dataimp"</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb16-5"><a href="#cb16-5"></a><span class="co">  markdown: </span></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="co">    wrap: 72</span></span>
+<span id="cb16-7"><a href="#cb16-7"></a><span class="co">---</span></span>
+<span id="cb16-8"><a href="#cb16-8"></a></span>
+<span id="cb16-9"><a href="#cb16-9"></a>---</span>
+<span id="cb16-10"><a href="#cb16-10"></a>title: "Data Import"</span>
+<span id="cb16-11"><a href="#cb16-11"></a>number-sections: true</span>
+<span id="cb16-12"><a href="#cb16-12"></a>execute: </span>
+<span id="cb16-13"><a href="#cb16-13"></a>  warning: false</span>
+<span id="cb16-14"><a href="#cb16-14"></a>fig-env: 'figure'</span>
+<span id="cb16-15"><a href="#cb16-15"></a>fig-pos: 'h'</span>
+<span id="cb16-16"><a href="#cb16-16"></a>fig-align: center</span>
+<span id="cb16-17"><a href="#cb16-17"></a>code-fold: false</span>
+<span id="cb16-18"><a href="#cb16-18"></a>---</span>
+<span id="cb16-19"><a href="#cb16-19"></a></span>
+<span id="cb16-20"><a href="#cb16-20"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb16-21"><a href="#cb16-21"></a>Get a glimpse into how to... - find existing data sets - save data sets</span>
+<span id="cb16-22"><a href="#cb16-22"></a>locally - load data into RStudio - do preliminary data checking and</span>
+<span id="cb16-23"><a href="#cb16-23"></a>cleaning: - format variables properly - deal with missing values NOTE:</span>
+<span id="cb16-24"><a href="#cb16-24"></a>Best learned through practice.</span>
+<span id="cb16-25"><a href="#cb16-25"></a>:::</span>
+<span id="cb16-26"><a href="#cb16-26"></a></span>
+<span id="cb16-27"><a href="#cb16-27"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb16-28"><a href="#cb16-28"></a><span class="ss">-   </span>[Import wizard demo</span>
+<span id="cb16-29"><a href="#cb16-29"></a>    (YouTube)](https://www.youtube.com/watch?v=GtCsjtZBNp4)</span>
+<span id="cb16-30"><a href="#cb16-30"></a><span class="ss">-   </span>[Data Import Cheat Sheet</span>
+<span id="cb16-31"><a href="#cb16-31"></a>    (pdf)](https://github.com/rstudio/cheatsheets/raw/main/data-import.pdf)</span>
+<span id="cb16-32"><a href="#cb16-32"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">`readr` documentation</span><span class="co">](https://readr.tidyverse.org/)</span></span>
+<span id="cb16-33"><a href="#cb16-33"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Data Import (r4ds)</span><span class="co">](https://r4ds.hadley.nz/data-import.html)</span></span>
+<span id="cb16-34"><a href="#cb16-34"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Missing data (r4ds)</span><span class="co">](https://r4ds.hadley.nz/missing-values.html)</span></span>
+<span id="cb16-35"><a href="#cb16-35"></a><span class="ss">-   </span>[Data intake</span>
+<span id="cb16-36"><a href="#cb16-36"></a>    (MDSR)](https://mdsr-book.github.io/mdsr2e/ch-dataII.html#data-intake)</span>
+<span id="cb16-37"><a href="#cb16-37"></a>:::</span>
+<span id="cb16-38"><a href="#cb16-38"></a></span>
+<span id="cb16-41"><a href="#cb16-41"></a><span class="in">```{r}</span></span>
+<span id="cb16-42"><a href="#cb16-42"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-43"><a href="#cb16-43"></a></span>
+<span id="cb16-44"><a href="#cb16-44"></a><span class="co"># Import the messy IMDB dataset from Downloads</span></span>
+<span id="cb16-45"><a href="#cb16-45"></a>imdb_messy <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/Desktop/imdb_5000_messy.csv"</span>)</span>
+<span id="cb16-46"><a href="#cb16-46"></a></span>
+<span id="cb16-47"><a href="#cb16-47"></a></span>
+<span id="cb16-48"><a href="#cb16-48"></a><span class="fu">str</span>(imdb_messy)</span>
+<span id="cb16-49"><a href="#cb16-49"></a></span>
+<span id="cb16-50"><a href="#cb16-50"></a><span class="fu">head</span>(imdb_messy)</span>
+<span id="cb16-51"><a href="#cb16-51"></a></span>
+<span id="cb16-52"><a href="#cb16-52"></a><span class="co"># Summarize data</span></span>
+<span id="cb16-53"><a href="#cb16-53"></a>imdb_messy <span class="sc">|&gt;</span></span>
+<span id="cb16-54"><a href="#cb16-54"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), as.factor)) <span class="sc">|&gt;</span></span>
+<span id="cb16-55"><a href="#cb16-55"></a>  <span class="fu">summary</span>()</span>
+<span id="cb16-56"><a href="#cb16-56"></a></span>
+<span id="cb16-57"><a href="#cb16-57"></a><span class="in">```</span></span>
+<span id="cb16-58"><a href="#cb16-58"></a></span>
+<span id="cb16-61"><a href="#cb16-61"></a><span class="in">```{r}</span></span>
+<span id="cb16-62"><a href="#cb16-62"></a><span class="co"># See how color variable looks</span></span>
+<span id="cb16-63"><a href="#cb16-63"></a>imdb_messy <span class="sc">|&gt;</span> <span class="fu">count</span>(color)</span>
+<span id="cb16-64"><a href="#cb16-64"></a></span>
+<span id="cb16-65"><a href="#cb16-65"></a><span class="co"># Clean it using fct_recode()</span></span>
+<span id="cb16-66"><a href="#cb16-66"></a>imdb_clean <span class="ot">&lt;-</span> imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb16-67"><a href="#cb16-67"></a>  <span class="fu">mutate</span>(<span class="at">color =</span> <span class="fu">fct_recode</span>(color,</span>
+<span id="cb16-68"><a href="#cb16-68"></a>                            <span class="st">"Color"</span> <span class="ot">=</span> <span class="st">"COLOR"</span>,</span>
+<span id="cb16-69"><a href="#cb16-69"></a>                            <span class="st">"Color"</span> <span class="ot">=</span> <span class="st">"color"</span>,</span>
+<span id="cb16-70"><a href="#cb16-70"></a>                            <span class="st">"Black_White"</span> <span class="ot">=</span> <span class="st">"B&amp;W"</span>,</span>
+<span id="cb16-71"><a href="#cb16-71"></a>                            <span class="st">"Black_White"</span> <span class="ot">=</span> <span class="st">"Black and White"</span>))</span>
+<span id="cb16-72"><a href="#cb16-72"></a></span>
+<span id="cb16-73"><a href="#cb16-73"></a><span class="co"># Double-check cleaned values</span></span>
+<span id="cb16-74"><a href="#cb16-74"></a>imdb_clean <span class="sc">|&gt;</span> <span class="fu">count</span>(color)</span>
+<span id="cb16-75"><a href="#cb16-75"></a></span>
+<span id="cb16-76"><a href="#cb16-76"></a><span class="in">```</span></span>
+<span id="cb16-77"><a href="#cb16-77"></a></span>
+<span id="cb16-80"><a href="#cb16-80"></a><span class="in">```{r}</span></span>
+<span id="cb16-81"><a href="#cb16-81"></a><span class="co"># How many missing values per column?</span></span>
+<span id="cb16-82"><a href="#cb16-82"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(imdb_messy))</span>
+<span id="cb16-83"><a href="#cb16-83"></a></span>
+<span id="cb16-84"><a href="#cb16-84"></a><span class="co"># Look at movies missing actor 1 facebook likes</span></span>
+<span id="cb16-85"><a href="#cb16-85"></a>imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb16-86"><a href="#cb16-86"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(actor_1_facebook_likes))</span>
+<span id="cb16-87"><a href="#cb16-87"></a></span>
+<span id="cb16-88"><a href="#cb16-88"></a><span class="in">```</span></span>
+<span id="cb16-89"><a href="#cb16-89"></a></span>
+<span id="cb16-92"><a href="#cb16-92"></a><span class="in">```{r}</span></span>
+<span id="cb16-93"><a href="#cb16-93"></a><span class="co"># Drop movies missing duration or color</span></span>
+<span id="cb16-94"><a href="#cb16-94"></a>imdb_no_missing <span class="ot">&lt;-</span> imdb_messy <span class="sc">|&gt;</span> </span>
+<span id="cb16-95"><a href="#cb16-95"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(duration), <span class="sc">!</span><span class="fu">is.na</span>(color))</span>
+<span id="cb16-96"><a href="#cb16-96"></a></span>
+<span id="cb16-97"><a href="#cb16-97"></a><span class="co"># Plot to check</span></span>
+<span id="cb16-98"><a href="#cb16-98"></a><span class="fu">ggplot</span>(imdb_no_missing, <span class="fu">aes</span>(<span class="at">x =</span> duration, <span class="at">fill =</span> color)) <span class="sc">+</span></span>
+<span id="cb16-99"><a href="#cb16-99"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb16-100"><a href="#cb16-100"></a></span>
+<span id="cb16-101"><a href="#cb16-101"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
