@@ -1,5 +1,5 @@
 ---
-title: "ica-str"
+title: "Strings"
 format: html
 ---
 
