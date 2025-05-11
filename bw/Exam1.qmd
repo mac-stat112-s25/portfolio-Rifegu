@@ -1,8 +1,88 @@
 ---
-title: "Exam 1"
+title: "Exam1"
 format: html
 ---
 
 ```{r}
+library(tidytuesdayR)
+library(tidyverse)
+
 ```
 
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+
+```
+
+```{r}
+head(fc)      # view first few rows
+tail(fc)      # view last few rows
+nrow(fc)      # number of rows
+ncol(fc)      # number of columns
+class(fc)     # class of the object
+
+```
+
+```{r}
+head(fc, 22)
+
+```
+
+```{r}
+tail(fc, 22)
+
+```
+
+```{r}
+#| fig-height: 8
+#| fig-width: 12
+
+ggplot(fc, aes(x = food_category, y = consumption)) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Food Consumption per Food Category",
+    x = "Food Category",
+    y = "Consumption (kg/person/year)"
+  )
+
+```
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+
+ggplot(fc, aes(x = food_category, y = consumption, fill = food_category)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ country, scales = "free_y") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Food Category Consumption by Country",
+    x = "Food Category",
+    y = "Consumption (kg/person/year)"
+  )
+
+```
+
+```{r}
+#| fig-height: 22
+#| fig-width: 11
+
+ggplot(fc, aes(x = food_category, y = consumption, fill = food_category)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ country) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    title = "Food Consumption by Category and Country",
+    x = "Food Category",
+    y = "Consumption (kg/person/year)"
+  )
+
+```
+
+> Throughout this project, I strengthened my skills in loading data, performing exploratory analysis, and choosing appropriate visualizations.
+> Managing the size of plots was important to make sure the faceted bar charts were readable.
+> One challenge was handling missing values and making the x-axis labels readable by rotating them.
+> If I did this again, I would also add a choropleth map to explore the geographical patterns of food consumption more visually.
+> This project helped me see the importance of clear labeling, accessibility, and not misleading the viewer.
