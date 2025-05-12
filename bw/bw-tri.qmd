@@ -6,21 +6,12 @@ Use this file to generate a professional looking **trivariate** visualization.
 The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
+
 library(ggplot2)
 library(tidyverse)
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 # Code to create the scatter plot
 library(ggplot2)
 library(palmerpenguins)
@@ -45,4 +36,3 @@ ggplot(penguins, aes(x = bill_length_mm, y = body_mass_g, color = species, shape
 >
 > This visualization is particularly effective for identifying group trends and overlaps between species and sexes at the same time.
 > If we were more interested in comparing only averages, a grouped boxplot would be more appropriate but for exploring individual variation and patterns, this scatter plot works better.
-

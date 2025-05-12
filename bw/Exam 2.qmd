@@ -8,11 +8,6 @@ format: html
 What does the consumption of each food category in each country look like?
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 # Load libraries
 library(tidytuesdayR)
 library(tidyverse)
@@ -118,11 +113,7 @@ ggplot(world_data3) +
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
+
 #| fig-height: 10
 #| fig-width: 30
 
@@ -138,4 +129,3 @@ ggplot(fc, aes(x = food_category, y = consumption, fill = country)) +
 
 
 ```
-

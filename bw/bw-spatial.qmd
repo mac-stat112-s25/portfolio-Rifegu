@@ -4,11 +4,6 @@ author: Feride Karatas
 ---
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 # Load required libraries
 library(tidyverse)
 library(openintro)
@@ -17,11 +12,6 @@ library(ggplot2)
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 
 # Import starbucks location data
 starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")

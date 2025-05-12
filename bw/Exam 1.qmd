@@ -8,33 +8,18 @@ format: html
 **Research Question:** What does the consumption of each food category in each country look like?
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 library(tidytuesdayR)
 library(tidyverse)
 
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 tuesdata <- tt_load('2020-02-18')
 fc <- tuesdata$food_consumption
 
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 head(fc)      # view first few rows
 tail(fc)      # view last few rows
 nrow(fc)      # number of rows
@@ -44,31 +29,17 @@ class(fc)     # class of the object
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 head(fc, 22)
 
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
+
 tail(fc, 22)
 
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 #| fig-height: 8
 #| fig-width: 12
 
@@ -84,11 +55,6 @@ ggplot(fc, aes(x = food_category, y = consumption)) +
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 #| fig-height: 22
 #| fig-width: 11
 
@@ -105,11 +71,6 @@ ggplot(fc, aes(x = food_category, y = consumption, fill = food_category)) +
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 #| fig-height: 22
 #| fig-width: 11
 
@@ -130,4 +91,3 @@ ggplot(fc, aes(x = food_category, y = consumption, fill = food_category)) +
 > One challenge was handling missing values and making the x-axis labels readable by rotating them.
 > If I did this again, I would also add a choropleth map to explore the geographical patterns of food consumption more visually.
 > This project helped me see the importance of clear labeling, accessibility, and not misleading the viewer.
-

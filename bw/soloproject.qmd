@@ -30,11 +30,6 @@ format: html
 > Boston: Addison Wesley.
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
 library(sf)
 library(tidyverse)
 library(ggplot2)
@@ -47,11 +42,7 @@ ggplot(cal_boundries)+
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
+
 # Prepare test score data by averaging income per county
 testscore_summary <- testscore %>%
   group_by(county) |>
@@ -74,11 +65,7 @@ ggplot(cal_boundries) +
 ```
 
 ```{r}
-#| code-fold: true
-#| warning: false
-#| error: false
-#| echo: true
-#| results: "show"
+
 # Prepare test score data by averaging income per county
 testscore_summary <- testscore %>%
   group_by(county) |>
@@ -108,4 +95,3 @@ ggplot(cal_boundries) +
 > Meaning that there might be a potential relationship between the two variables.
 > The relationship can be explored with a scatterplot accounting for effect modifiers and confounders.
 > I find this data interesting and it makes sense for me.
-
