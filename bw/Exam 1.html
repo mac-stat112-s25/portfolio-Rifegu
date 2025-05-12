@@ -326,7 +326,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><div class="cell">
+</header><p><strong>Food Consumption &amp; CO₂ Emissions</strong></p>
+<p><strong>Research Question:</strong> What does the consumption of each food category in each country look like?</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidytuesdayR)</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1124,89 +1126,93 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb23-3"><a href="#cb23-3"></a><span class="an">format:</span><span class="co"> html</span></span>
 <span id="cb23-4"><a href="#cb23-4"></a><span class="co">---</span></span>
 <span id="cb23-5"><a href="#cb23-5"></a></span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="in">```{r}</span></span>
-<span id="cb23-9"><a href="#cb23-9"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb23-10"><a href="#cb23-10"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb23-11"><a href="#cb23-11"></a></span>
-<span id="cb23-12"><a href="#cb23-12"></a><span class="in">```</span></span>
-<span id="cb23-13"><a href="#cb23-13"></a></span>
-<span id="cb23-16"><a href="#cb23-16"></a><span class="in">```{r}</span></span>
-<span id="cb23-17"><a href="#cb23-17"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
-<span id="cb23-18"><a href="#cb23-18"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span>
-<span id="cb23-19"><a href="#cb23-19"></a></span>
-<span id="cb23-20"><a href="#cb23-20"></a><span class="in">```</span></span>
-<span id="cb23-21"><a href="#cb23-21"></a></span>
-<span id="cb23-24"><a href="#cb23-24"></a><span class="in">```{r}</span></span>
-<span id="cb23-25"><a href="#cb23-25"></a><span class="fu">head</span>(fc)      <span class="co"># view first few rows</span></span>
-<span id="cb23-26"><a href="#cb23-26"></a><span class="fu">tail</span>(fc)      <span class="co"># view last few rows</span></span>
-<span id="cb23-27"><a href="#cb23-27"></a><span class="fu">nrow</span>(fc)      <span class="co"># number of rows</span></span>
-<span id="cb23-28"><a href="#cb23-28"></a><span class="fu">ncol</span>(fc)      <span class="co"># number of columns</span></span>
-<span id="cb23-29"><a href="#cb23-29"></a><span class="fu">class</span>(fc)     <span class="co"># class of the object</span></span>
-<span id="cb23-30"><a href="#cb23-30"></a></span>
-<span id="cb23-31"><a href="#cb23-31"></a><span class="in">```</span></span>
-<span id="cb23-32"><a href="#cb23-32"></a></span>
-<span id="cb23-35"><a href="#cb23-35"></a><span class="in">```{r}</span></span>
-<span id="cb23-36"><a href="#cb23-36"></a><span class="fu">head</span>(fc, <span class="dv">22</span>)</span>
-<span id="cb23-37"><a href="#cb23-37"></a></span>
-<span id="cb23-38"><a href="#cb23-38"></a><span class="in">```</span></span>
-<span id="cb23-39"><a href="#cb23-39"></a></span>
-<span id="cb23-42"><a href="#cb23-42"></a><span class="in">```{r}</span></span>
-<span id="cb23-43"><a href="#cb23-43"></a><span class="fu">tail</span>(fc, <span class="dv">22</span>)</span>
-<span id="cb23-44"><a href="#cb23-44"></a></span>
-<span id="cb23-45"><a href="#cb23-45"></a><span class="in">```</span></span>
-<span id="cb23-46"><a href="#cb23-46"></a></span>
-<span id="cb23-49"><a href="#cb23-49"></a><span class="in">```{r}</span></span>
-<span id="cb23-50"><a href="#cb23-50"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb23-51"><a href="#cb23-51"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb23-52"><a href="#cb23-52"></a></span>
-<span id="cb23-53"><a href="#cb23-53"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
-<span id="cb23-54"><a href="#cb23-54"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb23-55"><a href="#cb23-55"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-56"><a href="#cb23-56"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-57"><a href="#cb23-57"></a>    <span class="at">title =</span> <span class="st">"Food Consumption per Food Category"</span>,</span>
-<span id="cb23-58"><a href="#cb23-58"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
-<span id="cb23-59"><a href="#cb23-59"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
-<span id="cb23-60"><a href="#cb23-60"></a>  )</span>
-<span id="cb23-61"><a href="#cb23-61"></a></span>
-<span id="cb23-62"><a href="#cb23-62"></a><span class="in">```</span></span>
-<span id="cb23-63"><a href="#cb23-63"></a></span>
-<span id="cb23-66"><a href="#cb23-66"></a><span class="in">```{r}</span></span>
-<span id="cb23-67"><a href="#cb23-67"></a><span class="co">#| fig-height: 22</span></span>
-<span id="cb23-68"><a href="#cb23-68"></a><span class="co">#| fig-width: 11</span></span>
-<span id="cb23-69"><a href="#cb23-69"></a></span>
-<span id="cb23-70"><a href="#cb23-70"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> food_category)) <span class="sc">+</span></span>
-<span id="cb23-71"><a href="#cb23-71"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb23-72"><a href="#cb23-72"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> country, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
-<span id="cb23-73"><a href="#cb23-73"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-74"><a href="#cb23-74"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-75"><a href="#cb23-75"></a>    <span class="at">title =</span> <span class="st">"Food Category Consumption by Country"</span>,</span>
-<span id="cb23-76"><a href="#cb23-76"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
-<span id="cb23-77"><a href="#cb23-77"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
-<span id="cb23-78"><a href="#cb23-78"></a>  )</span>
-<span id="cb23-79"><a href="#cb23-79"></a></span>
-<span id="cb23-80"><a href="#cb23-80"></a><span class="in">```</span></span>
-<span id="cb23-81"><a href="#cb23-81"></a></span>
-<span id="cb23-84"><a href="#cb23-84"></a><span class="in">```{r}</span></span>
-<span id="cb23-85"><a href="#cb23-85"></a><span class="co">#| fig-height: 22</span></span>
-<span id="cb23-86"><a href="#cb23-86"></a><span class="co">#| fig-width: 11</span></span>
-<span id="cb23-87"><a href="#cb23-87"></a></span>
-<span id="cb23-88"><a href="#cb23-88"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> food_category)) <span class="sc">+</span></span>
-<span id="cb23-89"><a href="#cb23-89"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb23-90"><a href="#cb23-90"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> country) <span class="sc">+</span></span>
-<span id="cb23-91"><a href="#cb23-91"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb23-92"><a href="#cb23-92"></a>  <span class="fu">labs</span>(</span>
-<span id="cb23-93"><a href="#cb23-93"></a>    <span class="at">title =</span> <span class="st">"Food Consumption by Category and Country"</span>,</span>
-<span id="cb23-94"><a href="#cb23-94"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
-<span id="cb23-95"><a href="#cb23-95"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
-<span id="cb23-96"><a href="#cb23-96"></a>  )</span>
-<span id="cb23-97"><a href="#cb23-97"></a></span>
-<span id="cb23-98"><a href="#cb23-98"></a><span class="in">```</span></span>
-<span id="cb23-99"><a href="#cb23-99"></a></span>
-<span id="cb23-100"><a href="#cb23-100"></a><span class="at">&gt; Throughout this project, I strengthened my skills in loading data, performing exploratory analysis, and choosing appropriate visualizations.</span></span>
-<span id="cb23-101"><a href="#cb23-101"></a><span class="at">&gt; Managing the size of plots was important to make sure the faceted bar charts were readable.</span></span>
-<span id="cb23-102"><a href="#cb23-102"></a><span class="at">&gt; One challenge was handling missing values and making the x-axis labels readable by rotating them.</span></span>
-<span id="cb23-103"><a href="#cb23-103"></a><span class="at">&gt; If I did this again, I would also add a choropleth map to explore the geographical patterns of food consumption more visually.</span></span>
-<span id="cb23-104"><a href="#cb23-104"></a><span class="at">&gt; This project helped me see the importance of clear labeling, accessibility, and not misleading the viewer.</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>**Food Consumption &amp; CO₂ Emissions**</span>
+<span id="cb23-7"><a href="#cb23-7"></a></span>
+<span id="cb23-8"><a href="#cb23-8"></a>**Research Question:** What does the consumption of each food category in each country look like?</span>
+<span id="cb23-9"><a href="#cb23-9"></a></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="in">```{r}</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb23-15"><a href="#cb23-15"></a></span>
+<span id="cb23-16"><a href="#cb23-16"></a><span class="in">```</span></span>
+<span id="cb23-17"><a href="#cb23-17"></a></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="in">```{r}</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
+<span id="cb23-22"><a href="#cb23-22"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span>
+<span id="cb23-23"><a href="#cb23-23"></a></span>
+<span id="cb23-24"><a href="#cb23-24"></a><span class="in">```</span></span>
+<span id="cb23-25"><a href="#cb23-25"></a></span>
+<span id="cb23-28"><a href="#cb23-28"></a><span class="in">```{r}</span></span>
+<span id="cb23-29"><a href="#cb23-29"></a><span class="fu">head</span>(fc)      <span class="co"># view first few rows</span></span>
+<span id="cb23-30"><a href="#cb23-30"></a><span class="fu">tail</span>(fc)      <span class="co"># view last few rows</span></span>
+<span id="cb23-31"><a href="#cb23-31"></a><span class="fu">nrow</span>(fc)      <span class="co"># number of rows</span></span>
+<span id="cb23-32"><a href="#cb23-32"></a><span class="fu">ncol</span>(fc)      <span class="co"># number of columns</span></span>
+<span id="cb23-33"><a href="#cb23-33"></a><span class="fu">class</span>(fc)     <span class="co"># class of the object</span></span>
+<span id="cb23-34"><a href="#cb23-34"></a></span>
+<span id="cb23-35"><a href="#cb23-35"></a><span class="in">```</span></span>
+<span id="cb23-36"><a href="#cb23-36"></a></span>
+<span id="cb23-39"><a href="#cb23-39"></a><span class="in">```{r}</span></span>
+<span id="cb23-40"><a href="#cb23-40"></a><span class="fu">head</span>(fc, <span class="dv">22</span>)</span>
+<span id="cb23-41"><a href="#cb23-41"></a></span>
+<span id="cb23-42"><a href="#cb23-42"></a><span class="in">```</span></span>
+<span id="cb23-43"><a href="#cb23-43"></a></span>
+<span id="cb23-46"><a href="#cb23-46"></a><span class="in">```{r}</span></span>
+<span id="cb23-47"><a href="#cb23-47"></a><span class="fu">tail</span>(fc, <span class="dv">22</span>)</span>
+<span id="cb23-48"><a href="#cb23-48"></a></span>
+<span id="cb23-49"><a href="#cb23-49"></a><span class="in">```</span></span>
+<span id="cb23-50"><a href="#cb23-50"></a></span>
+<span id="cb23-53"><a href="#cb23-53"></a><span class="in">```{r}</span></span>
+<span id="cb23-54"><a href="#cb23-54"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb23-55"><a href="#cb23-55"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb23-56"><a href="#cb23-56"></a></span>
+<span id="cb23-57"><a href="#cb23-57"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb23-58"><a href="#cb23-58"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb23-59"><a href="#cb23-59"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb23-60"><a href="#cb23-60"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-61"><a href="#cb23-61"></a>    <span class="at">title =</span> <span class="st">"Food Consumption per Food Category"</span>,</span>
+<span id="cb23-62"><a href="#cb23-62"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
+<span id="cb23-63"><a href="#cb23-63"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
+<span id="cb23-64"><a href="#cb23-64"></a>  )</span>
+<span id="cb23-65"><a href="#cb23-65"></a></span>
+<span id="cb23-66"><a href="#cb23-66"></a><span class="in">```</span></span>
+<span id="cb23-67"><a href="#cb23-67"></a></span>
+<span id="cb23-70"><a href="#cb23-70"></a><span class="in">```{r}</span></span>
+<span id="cb23-71"><a href="#cb23-71"></a><span class="co">#| fig-height: 22</span></span>
+<span id="cb23-72"><a href="#cb23-72"></a><span class="co">#| fig-width: 11</span></span>
+<span id="cb23-73"><a href="#cb23-73"></a></span>
+<span id="cb23-74"><a href="#cb23-74"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> food_category)) <span class="sc">+</span></span>
+<span id="cb23-75"><a href="#cb23-75"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb23-76"><a href="#cb23-76"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> country, <span class="at">scales =</span> <span class="st">"free_y"</span>) <span class="sc">+</span></span>
+<span id="cb23-77"><a href="#cb23-77"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb23-78"><a href="#cb23-78"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-79"><a href="#cb23-79"></a>    <span class="at">title =</span> <span class="st">"Food Category Consumption by Country"</span>,</span>
+<span id="cb23-80"><a href="#cb23-80"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
+<span id="cb23-81"><a href="#cb23-81"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
+<span id="cb23-82"><a href="#cb23-82"></a>  )</span>
+<span id="cb23-83"><a href="#cb23-83"></a></span>
+<span id="cb23-84"><a href="#cb23-84"></a><span class="in">```</span></span>
+<span id="cb23-85"><a href="#cb23-85"></a></span>
+<span id="cb23-88"><a href="#cb23-88"></a><span class="in">```{r}</span></span>
+<span id="cb23-89"><a href="#cb23-89"></a><span class="co">#| fig-height: 22</span></span>
+<span id="cb23-90"><a href="#cb23-90"></a><span class="co">#| fig-width: 11</span></span>
+<span id="cb23-91"><a href="#cb23-91"></a></span>
+<span id="cb23-92"><a href="#cb23-92"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> food_category)) <span class="sc">+</span></span>
+<span id="cb23-93"><a href="#cb23-93"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb23-94"><a href="#cb23-94"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> country) <span class="sc">+</span></span>
+<span id="cb23-95"><a href="#cb23-95"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb23-96"><a href="#cb23-96"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-97"><a href="#cb23-97"></a>    <span class="at">title =</span> <span class="st">"Food Consumption by Category and Country"</span>,</span>
+<span id="cb23-98"><a href="#cb23-98"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
+<span id="cb23-99"><a href="#cb23-99"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
+<span id="cb23-100"><a href="#cb23-100"></a>  )</span>
+<span id="cb23-101"><a href="#cb23-101"></a></span>
+<span id="cb23-102"><a href="#cb23-102"></a><span class="in">```</span></span>
+<span id="cb23-103"><a href="#cb23-103"></a></span>
+<span id="cb23-104"><a href="#cb23-104"></a><span class="at">&gt; Throughout this project, I strengthened my skills in loading data, performing exploratory analysis, and choosing appropriate visualizations.</span></span>
+<span id="cb23-105"><a href="#cb23-105"></a><span class="at">&gt; Managing the size of plots was important to make sure the faceted bar charts were readable.</span></span>
+<span id="cb23-106"><a href="#cb23-106"></a><span class="at">&gt; One challenge was handling missing values and making the x-axis labels readable by rotating them.</span></span>
+<span id="cb23-107"><a href="#cb23-107"></a><span class="at">&gt; If I did this again, I would also add a choropleth map to explore the geographical patterns of food consumption more visually.</span></span>
+<span id="cb23-108"><a href="#cb23-108"></a><span class="at">&gt; This project helped me see the importance of clear labeling, accessibility, and not misleading the viewer.</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
