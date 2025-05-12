@@ -1,4 +1,10 @@
 ```{r}
+#| code-fold: true
+#| warning: false
+#| error: false
+#| echo: true
+
+
 library(ggplot2)
 library(tidyverse)
 
