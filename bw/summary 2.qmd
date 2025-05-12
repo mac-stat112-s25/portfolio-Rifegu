@@ -2,3 +2,9 @@
 title: "summary 2"
 format: html
 ---
+
+![![](images/Screenshot 2025-05-11 at 10.29.00 PM.png)](images/Screenshot 2025-05-11 at 10.28.45 PM.png)
+
+![![](images/Screenshot 2025-05-11 at 10.29.26 PM.png)](images/Screenshot 2025-05-11 at 10.29.13 PM.png)
+
+![](images/Screenshot 2025-05-11 at 10.29.38 PM.png)
