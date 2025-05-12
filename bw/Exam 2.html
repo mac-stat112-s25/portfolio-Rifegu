@@ -594,17 +594,21 @@ The following object is masked from 'package:rnaturalearth':
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
-<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb33-4"><a href="#cb33-4"></a>  <span class="fu">labs</span>(</span>
-<span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">title =</span> <span class="st">"Food Consumption per Category by Country"</span>,</span>
-<span id="cb33-6"><a href="#cb33-6"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
-<span id="cb33-7"><a href="#cb33-7"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
-<span id="cb33-8"><a href="#cb33-8"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co">#| fig-height: 10</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="co">#| fig-width: 30</span></span>
+<span id="cb33-3"><a href="#cb33-3"></a></span>
+<span id="cb33-4"><a href="#cb33-4"></a></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> food_category, <span class="at">y =</span> consumption, <span class="at">fill =</span> country)) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb33-8"><a href="#cb33-8"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-9"><a href="#cb33-9"></a>    <span class="at">title =</span> <span class="st">"Food Consumption per Category by Country"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10"></a>    <span class="at">x =</span> <span class="st">"Food Category"</span>,</span>
+<span id="cb33-11"><a href="#cb33-11"></a>    <span class="at">y =</span> <span class="st">"Consumption (kg/person/year)"</span></span>
+<span id="cb33-12"><a href="#cb33-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure class="figure"><p><img src="Exam-2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="2880"></p>
+<figure class="figure"><p><img src="Exam-2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

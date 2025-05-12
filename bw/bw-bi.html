@@ -1003,33 +1003,34 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="in">library(ggplot2)</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="in"> hikes &lt;- read.csv("https://mac-stat.github.io/data/high_peaks.csv")</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="in">p &lt;- ggplot(hikes, aes(x = elevation, y = ascent, color = factor(difficulty))) + </span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="in">  geom_point() + </span></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="in">  labs(</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">    title = "Bivariate Analysis of Elevation vs. Distance for High Peaks",</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="in">    subtitle = "Exploring the relationship between elevation and distance for hiking trails",</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a><span class="in">    x = "Elevation (feet)",</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="in">    y = "Distance (miles)",</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="in">    color = "Trail Difficulty"</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="in">  ) + </span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="in">  theme_minimal() + </span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="in">  scale_color_brewer(palette = "Set1") + </span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="in">  theme(</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="in">    plot.title = element_text(size = 14, face = "bold"),</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="in">    plot.subtitle = element_text(size = 10),</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="in">    legend.title = element_text(size = 12),</span></span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="in">    legend.text = element_text(size = 10)</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="in">  )</span></span>
-<span id="cb4-23"><a href="#cb4-23"></a></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="in"># Print the plot</span></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="in">print(p)</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="in"> hikes &lt;- read.csv("https://mac-stat.github.io/data/high_peaks.csv")</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="in">p &lt;- ggplot(hikes, aes(x = elevation, y = ascent, color = factor(difficulty))) + </span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="in">  geom_point() + </span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="in">  labs(</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="in">    title = "Bivariate Analysis of Elevation vs. Distance for High Peaks",</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="in">    subtitle = "Exploring the relationship between elevation and distance for hiking trails",</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="in">    x = "Elevation (feet)",</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="in">    y = "Distance (miles)",</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="in">    color = "Trail Difficulty"</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="in">  ) + </span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="in">  theme_minimal() + </span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="in">  scale_color_brewer(palette = "Set1") + </span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="in">  theme(</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="in">    plot.title = element_text(size = 14, face = "bold"),</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="in">    plot.subtitle = element_text(size = 10),</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="in">    legend.title = element_text(size = 12),</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="in">    legend.text = element_text(size = 10)</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="in">  )</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="in"># Print the plot</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="in">print(p)</span></span>
 <span id="cb4-27"><a href="#cb4-27"></a></span>
-<span id="cb4-28"><a href="#cb4-28"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb4-28"><a href="#cb4-28"></a></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
