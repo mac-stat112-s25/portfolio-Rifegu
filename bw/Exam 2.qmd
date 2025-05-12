@@ -3,6 +3,10 @@ title: "Exam 2"
 format: html
 ---
 
+**Food Consumption (again, but deeper: wide → long, maps, fixing plots)**
+
+What does the consumption of each food category in each country look like?
+
 ```{r}
 
 # Load libraries
@@ -108,6 +112,7 @@ ggplot(world_data3) +
   theme(legend.position = "bottom")
 
 ```
+
 ```{r}
 #| fig-height: 10
 #| fig-width: 30
@@ -124,4 +129,3 @@ ggplot(fc, aes(x = food_category, y = consumption, fill = country)) +
 
 
 ```
-

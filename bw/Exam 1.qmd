@@ -3,6 +3,10 @@ title: "Exam 1"
 format: html
 ---
 
+**Food Consumption & CO₂ Emissions**
+
+**Research Question:** What does the consumption of each food category in each country look like?
+
 ```{r}
 library(tidytuesdayR)
 library(tidyverse)
